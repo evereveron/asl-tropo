@@ -1,5 +1,5 @@
 var express = require('express');
-var $ = jQuery = require('jQuery');
+var $ = jquery = require('jquery');
 
 var app = express();
 app.set('view engine', 'ejs');
