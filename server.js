@@ -1,17 +1,26 @@
-var ciscospark = require('ciscospark/dist');
- 
-assert('YWYxZTZkMTctZjY3ZS00NjA1LTk2NWYtMjMyNDE5MjliNzE4MDM4NDZkZmYtZjE0');
-return ciscospark.rooms.create({title: 'My First Room'})
-  .then(function(room) {
-    return ciscospark.messages.create({
-      text: 'Howdy!',
-      roomId: room.id
-    });
-  })
-  .catch(function(reason) {
-    console.log('error');
-    console.error(reason);
-    process.exit(1);
-  });
- 
- window.open('https://jabberguestsandbox.cisco.com/call/5555','popup','width=550,height=400,toolbar=no,location=no,menubar=no,status=no'); return false;
+var express = require('express');
+var $ = jQuery = require('jQuery');
+
+var app = express();
+app.set('view engine', 'ejs');
+app.set('port', (process.env.PORT || 8080));
+app.use(express.static(__dirname + '/'));
+
+console.log('starting app at localhost:8000...');
+
+app.get('/', function(req, res) {
+    console.log('home');
+    res.render('pages/index');  
+});
+
+app.get('/learn', function(req, res) {
+    console.log('learn');
+    res.render('pages/learn');
+});
+
+app.get('/connect', function(req, res) {
+    console.log('connect');
+    res.render('pages/connect');
+});
+
+app.listen(8000);
