@@ -1,0 +1,334 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">/**
+<span class='line'>  2</span>  * @fileOverview supplementaldocs.js
+<span class='line'>  3</span>  * documentation of implicit objects/events that don't fit inline
+<span class='line'>  4</span>  */</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="COMM">//</span><span class="WHIT">
+<span class='line'>  6</span> </span><span class="COMM">// Extra documentation for cwic.js that can't be inlined</span><span class="WHIT">
+<span class='line'>  7</span> </span><span class="COMM">// Put into a separate file to prevent clutter in cwic.js</span><span class="WHIT">
+<span class='line'>  8</span> 
+<span class='line'>  9</span> </span><span class="COMM">// OBJECTS</span><span class="WHIT">
+<span class='line'> 10</span> 
+<span class='line'> 11</span> </span><span class="COMM">// using virtual namespace for documentation purposes</span><span class="WHIT">
+<span class='line'> 12</span> </span><span class="COMM">// useful for objects that can are re-used and need to be cross-referenced</span><span class="WHIT">
+<span class='line'> 13</span> </span><span class="COMM">// also jsdoc support documenting nested anonymous virtual objects as return objects</span><span class="WHIT">
+<span class='line'> 14</span> 
+<span class='line'> 15</span> </span><span class="COMM">/**
+<span class='line'> 16</span>  * Object returned from about method
+<span class='line'> 17</span>  * @name aboutObject
+<span class='line'> 18</span>  * @namespace
+<span class='line'> 19</span>  * @property {Object} javascript JavaScript properties
+<span class='line'> 20</span>  * @property {String} javascript:version JavaScript version
+<span class='line'> 21</span>  * @property {String} javascript:system_release Since: 2.1.1 &lt;br>
+<span class='line'> 22</span>  * JavaScript system release information.
+<span class='line'> 23</span>  * @property {Object} jquery jQuery properties
+<span class='line'> 24</span>  * @property {String} jquery:version jQuery version
+<span class='line'> 25</span>  * @property {Object|null} channel Since: 3.1.0 &lt;br> Properties of channel extension to add-on.  Null if add-on is loaded directly (NPAPI or ActiveX plug-in).
+<span class='line'> 26</span>  * @property {String} channel:cwicExtId ID of the browser extension, if applicable.
+<span class='line'> 27</span>  * @property {String} channel:objectId ID of html element that was appended to the web page.  If present, this element is used and required by the channel extension.
+<span class='line'> 28</span>  * @property {String} channel:version CWIC version of the Cisco Chrome extension channel.
+<span class='line'> 29</span>  * @property {String} channel:system_release System release information for the channel.
+<span class='line'> 30</span>  * @property {Object|null} plugin Cisco Web Communicator add-on properties.  Null if add-on could not be loaded.
+<span class='line'> 31</span>  * @property {Object} plugin:version Version details for the loaded add-on.
+<span class='line'> 32</span>  * @property {String} plugin:version:plugin CWIC version of the add-on.
+<span class='line'> 33</span>  * @property {String} plugin:version:system_release Since: 2.1.1 &lt;br>
+<span class='line'> 34</span>  * System release information for the add-on.
+<span class='line'> 35</span>  * @property {Object} states cwic states
+<span class='line'> 36</span>  * @property {String} states:system Current system state (e.g. "eReady")
+<span class='line'> 37</span>  * @property {Object} states:device Currently registered device if any
+<span class='line'> 38</span>  * @property {Object} capabilities Capabilities
+<span class='line'> 39</span>  * @property {Boolean} capabilities:video Support for video calls.
+<span class='line'> 40</span>  * @property {Boolean} capabilities:videoPluginObject Since: 3.1.0 &lt;br>
+<span class='line'> 41</span>  * Support for video plug-in objects in the browser, see {@link $.fn.cwic-createVideoWindow}.
+<span class='line'> 42</span>  * If &lt;tt>false&lt;/tt>, video can only be shown in an external video window.
+<span class='line'> 43</span>  * @property {Boolean} capabilities:delayedUserAuth Since: 3.0.1 &lt;br>
+<span class='line'> 44</span>  * Support for delayed user authorization dialog.
+<span class='line'> 45</span>  * @property {Boolean} capabilities:certValidation Since: 3.0.4 &lt;br>
+<span class='line'> 46</span>  * Support for certificate validation.  If &lt;tt>true&lt;/tt>, certificate validation will be used unless explicitly disabled by 
+<span class='line'> 47</span>  * calling {@link $.fn.cwic-disableCertValidation}.  If &lt;tt>false&lt;/tt>, certificate validation will not be available.
+<span class='line'> 48</span>  * @property {Boolean} capabilities:externalWindowDocking Since: 3.1.2 &lt;br>
+<span class='line'> 49</span>  * Support for external video window docking, see {@link $.fn.cwic-dock} and {@link $.fn.cwic-undock}.
+<span class='line'> 50</span>  * @property {Object} upgrade Advice about possible upgrade.
+<span class='line'> 51</span>  * @property {String} upgrade:javascript Relevant if add-on version is later than the cwic.js JavaScript. Can be one of&lt;ul>
+<span class='line'> 52</span>  * &lt;li>"mandatory" The add-on and cwic.js versions are not compatible.&lt;/li>
+<span class='line'> 53</span>  * &lt;li>"recommended" The add-on may have features or bug fixes that require upgrade to cwic.js.&lt;/li>
+<span class='line'> 54</span>  * &lt;li>undefined if not relevant.&lt;/li>&lt;/ul>
+<span class='line'> 55</span>  * @property {String} upgrade:plugin Relevant if the cwic.js JavaScript version is later than the add-on. Can be one of&lt;ul>
+<span class='line'> 56</span>  * &lt;li>"mandatory" The add-on and cwic.js versions are not compatible.&lt;/li>
+<span class='line'> 57</span>  * &lt;li>"recommended" The add-on may not provide all features or bug fixes available.&lt;/li>
+<span class='line'> 58</span>  * &lt;li>"unknown" Unable to determine version of the add-on.&lt;/li>
+<span class='line'> 59</span>  * &lt;li>undefined if not relevant.&lt;/li>&lt;/ul>
+<span class='line'> 60</span>  */</span><span class="WHIT">
+<span class='line'> 61</span> </span><span class="COMM">/**
+<span class='line'> 62</span>  * @name device
+<span class='line'> 63</span>  * @namespace
+<span class='line'> 64</span>  * @property {String} name
+<span class='line'> 65</span>  * @property {String} description
+<span class='line'> 66</span>  * @property {String} modelDescription
+<span class='line'> 67</span>  * @property {Boolean} isSoftPhone &lt;tt>true&lt;/tt> if the device is a software phone
+<span class='line'> 68</span>  * @property {Boolean} isDeskPhone &lt;tt>true&lt;/tt> if the device is a hardware (desk) phone
+<span class='line'> 69</span>  * @property {String[]} lineDNs Array of line DNs associated with this device (may be blank until connected to the device)
+<span class='line'> 70</span>  * @property {Object} line Object containing info about currently active line
+<span class='line'> 71</span>  * @property {String} serviceState One of &lt;ul>
+<span class='line'> 72</span>  * &lt;li>"eUnknown"&lt;/li>
+<span class='line'> 73</span>  * &lt;li>"eInService"&lt;/li>
+<span class='line'> 74</span>  * &lt;li>"eOutOfService"&lt;/li>&lt;/ul>
+<span class='line'> 75</span>  * @property {String} [inService] Service state
+<span class='line'> 76</span>  * @property {String} [serviceCause] Describes cause for current service state
+<span class='line'> 77</span>  * @property {Boolean} [isDND] DND state
+<span class='line'> 78</span>  * @property {String} [DNDType] DND type
+<span class='line'> 79</span>  * @property {Boolean} exists The device exists and can be used
+<span class='line'> 80</span>  */</span><span class="WHIT">
+<span class='line'> 81</span> 
+<span class='line'> 82</span> </span><span class="COMM">/**
+<span class='line'> 83</span>  * @name line
+<span class='line'> 84</span>  * @namespace
+<span class='line'> 85</span>  *
+<span class='line'> 86</span>  * @property {String} directoryNumber DN of the line as represented in the directory
+<span class='line'> 87</span>  * @property {String} name
+<span class='line'> 88</span>  * @property {Boolean} exists &lt;tt>true&lt;/tt> if the line exists
+<span class='line'> 89</span>  */</span><span class="WHIT">
+<span class='line'> 90</span> 
+<span class='line'> 91</span> </span><span class="COMM">/**
+<span class='line'> 92</span>  * @name call
+<span class='line'> 93</span>  * @namespace
+<span class='line'> 94</span>  * @property {Number} callId Unique identifier of the call.
+<span class='line'> 95</span>  * @property {Boolean} exists &lt;tt>true&lt;/tt> if the call exists.
+<span class='line'> 96</span>  * @property {Boolean} audioMuted Audio is muted.
+<span class='line'> 97</span>  * @property {Boolean} videoMuted Video is muted.
+<span class='line'> 98</span>  * @property {String} callState Current state of the call.  May be one of the following:&lt;ul>
+<span class='line'> 99</span>  * &lt;li>"OffHook" - receiver lifted in CTI control mode, or preparing to make a call in either mode.&lt;/li>
+<span class='line'>100</span>  * &lt;li>"OnHook" - call is ended or about to go OffHook. If !capabilities.canOriginateCall, then call is ended.&lt;/li>
+<span class='line'>101</span>  * &lt;li>"Ringout" - remote party is ringing.&lt;/li>
+<span class='line'>102</span>  * &lt;li>"Ringin" - incoming call.&lt;/li>
+<span class='line'>103</span>  * &lt;li>"Proceed" - if already on a call in CTI mode and there's an incoming call it may be in "Proceed" state.&lt;/li>
+<span class='line'>104</span>  * &lt;li>"Connected" - call is connected.&lt;/li>
+<span class='line'>105</span>  * &lt;li>"Hold" - call is held.&lt;/li>
+<span class='line'>106</span>  * &lt;li>"RemHold" - call is held on a shared-line device.&lt;/li>
+<span class='line'>107</span>  * &lt;li>"Resume" - n/a.&lt;/li>
+<span class='line'>108</span>  * &lt;li>"Busy" - remote line busy.&lt;/li>
+<span class='line'>109</span>  * &lt;li>"Reorder" - call failed.&lt;/li>
+<span class='line'>110</span>  * &lt;li>"Conference"&lt;/li>
+<span class='line'>111</span>  * &lt;li>"Dialing" - dialing number.&lt;/li>
+<span class='line'>112</span>  * &lt;li>"RemInUse" - call on a shared-line device.&lt;/li>
+<span class='line'>113</span>  * &lt;li>"HoldRevert"&lt;/li>
+<span class='line'>114</span>  * &lt;li>"Whisper"&lt;/li>
+<span class='line'>115</span>  * &lt;li>"Parked"&lt;/li>
+<span class='line'>116</span>  * &lt;li>"ParkRevert"&lt;/li>
+<span class='line'>117</span>  * &lt;li>"ParkRetrieved"&lt;/li>
+<span class='line'>118</span>  * &lt;li>"Preservation" - call is in preservation mode.&lt;/li>
+<span class='line'>119</span>  * &lt;li>"WaitingForDigits"&lt;/li
+<span class='line'>120</span>  * >&lt;li>"Spoof_Ringout"&lt;/li>&lt;/ul>
+<span class='line'>121</span>  * @property {String} callType One of the following: &lt;ul>&lt;li>"Placed"&lt;/li>&lt;li>"Received"&lt;/li>&lt;li>"Missed"&lt;/li>
+<span class='line'>122</span>  * @property {Date} start The &lt;tt>new Date()&lt;/tt> when the conversationStart.cwic event was fired for the call.
+<span class='line'>123</span>  * @property {String} videoDirection One of the following: &lt;ul>&lt;li>"Inactive"&lt;/li>&lt;li>"SendRecv"&lt;/li>&lt;li>"SendOnly"&lt;/li>&lt;li>"RecvOnly"&lt;/li>&lt;/ul>
+<span class='line'>124</span>  * @property {Object} videoResolution Contains video resolution width and height values (in pixels). Included in the Call object any time the resolution changes.
+<span class='line'>125</span>  * @property {Boolean} isConference &lt;tt>true&lt;/tt> if the call is a conference call.
+<span class='line'>126</span>  * @property {callcapability[]} capabilities A map that has capability name as the key and &lt;tt>true&lt;/tt> as the value. 
+<span class='line'>127</span>  * Call capabilities indicate operations you can perform on the call, and they should be used to control enabling/disabling/state/access to parts of the UI. Important capabilities are:
+<span class='line'>128</span>  * &lt;ul>
+<span class='line'>129</span>  * &lt;li>canOriginateCall - can create new call&lt;/li>
+<span class='line'>130</span>  * &lt;li>canAnswerCall - call can be answered&lt;/li>
+<span class='line'>131</span>  * &lt;li>canHold - call can be Held&lt;/li>
+<span class='line'>132</span>  * &lt;li>canResume - call can be Resumed&lt;/li>
+<span class='line'>133</span>  * &lt;li>canEndCall - call can be Ended&lt;/li>
+<span class='line'>134</span>  * &lt;li>canSendDigit - can send a DTMF digit to the call&lt;/li>
+<span class='line'>135</span>  * &lt;li>canDirectTransfer - can tranfer call&lt;/li>
+<span class='line'>136</span>  * &lt;li>canJoinAcrossLine - can join this call with another call on the same line with this capability also set&lt;/li>
+<span class='line'>137</span>  * &lt;li>canImmediateDivert - can iDivert (e.g. to voicemail)&lt;/li>
+<span class='line'>138</span>  * &lt;li>canUpdateVideoCapability - can update the videoDirection on the call. See {@link $.fn.cwic-updateConversation} examples.&lt;/li>
+<span class='line'>139</span>  * &lt;li>canMuteAudio - can mute audio on the call&lt;/li>
+<span class='line'>140</span>  * &lt;li>canUnmuteAudio - can unmute audio on the call&lt;/li>
+<span class='line'>141</span>  * &lt;li>canMuteVideo - can mute video on the call&lt;/li>
+<span class='line'>142</span>  * &lt;li>canUnmuteVideo - can unmute video on the call&lt;/li>
+<span class='line'>143</span>  * &lt;/ul>
+<span class='line'>144</span>  * @property {participant[]} participants Array of all remote participants on the call.
+<span class='line'>145</span>  * @property {participant} participant Remote participant (first entry in participants list).
+<span class='line'>146</span>  * @property {participant} localParticipant Local participant (your line info).
+<span class='line'>147</span>  */</span><span class="WHIT">
+<span class='line'>148</span> 
+<span class='line'>149</span> </span><span class="COMM">/**
+<span class='line'>150</span>  * @name participant
+<span class='line'>151</span>  * @namespace
+<span class='line'>152</span>  * @property {} name
+<span class='line'>153</span>  * @property {} [number] Untranslated number for other participant
+<span class='line'>154</span>  * @property {} [translatedNumber] Number for other participant as translated using available Cisco Unified Communications Manager dial rules
+<span class='line'>155</span>  * @property {} [directoryNumber] Local line number as represented in Cisco Unified Communications Manager directory
+<span class='line'>156</span>  */</span><span class="WHIT">
+<span class='line'>157</span> 
+<span class='line'>158</span> </span><span class="COMM">/**
+<span class='line'>159</span>  * @name registration
+<span class='line'>160</span>  * @namespace
+<span class='line'>161</span>  * @property {String} user The Cisco Unified Communications Manager end user name
+<span class='line'>162</span>  * @property {String} mode One of &lt;ul>&lt;li>"SoftPhone"&lt;/li>&lt;li>"DeskPhone"&lt;/li>&lt;/ul>
+<span class='line'>163</span>  * @property {device{}} devices Map keyed by device name of all devices available to authenticated user
+<span class='line'>164</span>  * @property {device} device The selected device
+<span class='line'>165</span>  * @property {line} line The selected line
+<span class='line'>166</span>  * @property {String|Object} password Cleartext password or encrypted password Object
+<span class='line'>167</span>  * @property {String} [password.encrpyted] Encrypted password
+<span class='line'>168</span>  * @property {String} [password.cipher] Cipher used to encrypt password
+<span class='line'>169</span>  * @property {String|Object} passphrase Alias for password
+<span class='line'>170</span>  * @property {String|Array|Object} cucm Original cucm parameter
+<span class='line'>171</span>  * @property {String|Array} [cucm.ccmcip] ccmcip addresses to attempt connection with
+<span class='line'>172</span>  * @property {String|Array} [cucm.tftp] tftp addresses to attempt connection with
+<span class='line'>173</span>  * Object representing Cisco Unified Communications Manager registration.  Many properties are set in the initial call to {@link $.fn.cwic-registerPhone}
+<span class='line'>174</span>  */</span><span class="WHIT">
+<span class='line'>175</span> 
+<span class='line'>176</span> </span><span class="COMM">// EVENTS</span><span class="WHIT">
+<span class='line'>177</span> 
+<span class='line'>178</span> </span><span class="COMM">/**
+<span class='line'>179</span>  * A conversation has just started. Note the conversation may not be connected yet, for example it is in the Alerting state.
+<span class='line'>180</span>  * The conversation container is passed as an extra event data.
+<span class='line'>181</span>  * @name $.fn.cwic#conversationStart
+<span class='line'>182</span>  * @event
+<span class='line'>183</span>  * @param {Object} event
+<span class='line'>184</span>  * @param {call} conversation
+<span class='line'>185</span>  * @param {DomNode} container
+<span class='line'>186</span>  */</span><span class="WHIT">
+<span class='line'>187</span> </span><span class="COMM">/**
+<span class='line'>188</span>  * One or more properties of a conversation have changed, such as state or participants.
+<span class='line'>189</span>  * @name $.fn.cwic#conversationUpdate
+<span class='line'>190</span>  * @event
+<span class='line'>191</span>  * @param {Object} event
+<span class='line'>192</span>  * @param {call} conversation
+<span class='line'>193</span>  * @param {jQueryNodeArray} container
+<span class='line'>194</span>  */</span><span class="WHIT">
+<span class='line'>195</span> </span><span class="COMM">/**
+<span class='line'>196</span>  * A conversation has ended.  The conversation was terminated by the local user, all participants left the conversation, or an error occurred (media failure for example).
+<span class='line'>197</span>  * @name $.fn.cwic#conversationEnd
+<span class='line'>198</span>  * @event
+<span class='line'>199</span>  * @param {Object} event
+<span class='line'>200</span>  * @param {call} conversation
+<span class='line'>201</span>  */</span><span class="WHIT">
+<span class='line'>202</span> </span><span class="COMM">/**
+<span class='line'>203</span>  * A new conversation is being received, but has not yet started.  The newly created conversation container is passed as an extra event data.&lt;br>
+<span class='line'>204</span>  * The application is responsible for attaching the container to the DOM and for managing the container lifetime.&lt;br>
+<span class='line'>205</span>  * In the case the new conversation is accepted by calling startConversation, a conversationStart event is triggered afterwards.&lt;br>
+<span class='line'>206</span>  * @name $.fn.cwic#conversationIncoming
+<span class='line'>207</span>  * @event
+<span class='line'>208</span>  * @param {Object} event
+<span class='line'>209</span>  * @param {call} conversation
+<span class='line'>210</span>  * @param {jQueryNodeArray} container
+<span class='line'>211</span>  */</span><span class="WHIT">
+<span class='line'>212</span> </span><span class="COMM">/**
+<span class='line'>213</span>  * Called when the phone changes state.
+<span class='line'>214</span>  * @name $.fn.cwic#system
+<span class='line'>215</span>  * @event
+<span class='line'>216</span>  * @param {Object} event
+<span class='line'>217</span>  * @param {Object} event.phone
+<span class='line'>218</span>  * @param {String} event.phone.status One of &lt;ul>
+<span class='line'>219</span>  * &lt;li>"eConnectionTerminated"&lt;/li>
+<span class='line'>220</span>  * &lt;li>"eIdle"&lt;/li>
+<span class='line'>221</span>  * &lt;li>"eRegistering"&lt;/li>
+<span class='line'>222</span>  * &lt;li>"eReady"&lt;/li>&lt;/ul>
+<span class='line'>223</span>  * @param {Boolean} event.phone.ready &lt;tt>true&lt;/tt> if phone is ready (status "eReady"), &lt;tt>false&lt;/tt> if it is logged out or in the process of registering or recovering
+<span class='line'>224</span>  * @param {registration} event.phone.registration An updated copy of the registration object passed to {@link $.fn.cwic-registerPhone}
+<span class='line'>225</span>  */</span><span class="WHIT">
+<span class='line'>226</span> </span><span class="COMM">/**
+<span class='line'>227</span>  * @name $.fn.cwic#error
+<span class='line'>228</span>  * @event
+<span class='line'>229</span>  * @param {Object|$.fn.cwic-errorMapEntry} event An arbitrary error event or pre-defined cwic error object.
+<span class='line'>230</span>  * @param {Object} event.code 
+<span class='line'>231</span>  * @param {String} [event.message] 
+<span class='line'>232</span>  * @param {String[]} [event.details] An array of additional information.
+<span class='line'>233</span>  */</span><span class="WHIT">
+<span class='line'>234</span> </span><span class="COMM">/**
+<span class='line'>235</span>  * A change to the list of local multimedia devices has occurred.
+<span class='line'>236</span>  * The application should use {@link $.fn.cwic-getMultimediaDevices} to acquire the updated list of devices. 
+<span class='line'>237</span>  * @name $.fn.cwic#mmDeviceChange
+<span class='line'>238</span>  * @since 3.0.0
+<span class='line'>239</span>  * @event
+<span class='line'>240</span>  * @param {Object} event
+<span class='line'>241</span>  */</span><span class="WHIT">
+<span class='line'>242</span> </span><span class="COMM">/**
+<span class='line'>243</span>  * A property has changed on the external video window created by {@link $.fn.cwic-showPreviewInExternalWindow} or {@link $.fn.cwic-showCallInExternalWindow}.
+<span class='line'>244</span>  * @name $.fn.cwic#externalWindowEvent
+<span class='line'>245</span>  * @since 3.1.0
+<span class='line'>246</span>  * @event
+<span class='line'>247</span>  * @param {Object} event
+<span class='line'>248</span>  * @param {Object} event.externalWindowState
+<span class='line'>249</span>  * @param {Number} event.externalWindowState.callId The {@link call#callId} of a call associated with the external video window. -1 if no call is associated.
+<span class='line'>250</span>  *  See also {@link $.fn.cwic-showCallInExternalWindow}.
+<span class='line'>251</span>  * @param {Boolean} event.externalWindowState.showing When &lt;tt>true&lt;/tt>, the external video window is displayed, possibly minimized or behind other windows.
+<span class='line'>252</span>  *  See also {@link $.fn.cwic-hideExternalWindow}.
+<span class='line'>253</span>  * @param {Boolean} event.externalWindowState.selfViewPip When &lt;tt>true&lt;/tt>, the external video window will display a picture-in-picture preview (self-view).
+<span class='line'>254</span>  *  Note the picture-in-picture preview will not be visible if preview is also in the full window.  See also {@link $.fn.cwic-setExternalWindowShowSelfViewPip}.
+<span class='line'>255</span>  * @param {Boolean} event.externalWindowState.alwaysOnTop When &lt;tt>true&lt;/tt>, the external video window will be set to always display on top of other windows.
+<span class='line'>256</span>  *  See also {@link $.fn.cwic-setExternalWindowAlwaysOnTop}.
+<span class='line'>257</span>  * @param {Boolean} event.externalWindowState.preview When &lt;tt>true&lt;/tt>, the external video window is showing preview (self-view) in the full window.
+<span class='line'>258</span>  *  See also {@link $.fn.cwic-showPreviewInExternalWindow}. 
+<span class='line'>259</span>  * @param {Boolean} event.externalWindowState.docking When &lt;tt>true&lt;/tt>, the external video window will be in docked state.
+<span class='line'>260</span>  *  See also {@link $.fn.cwic-dock}.
+<span class='line'>261</span>  * @param {String} event.externalWindowState.title The text used for the external video window's title bar.
+<span class='line'>262</span>  *  See also {@link $.fn.cwic-setExternalWindowTitle}
+<span class='line'>263</span>  */</span><span class="WHIT">
+<span class='line'>264</span> </span><span class="WHIT"> </span><span class="WHIT">
+<span class='line'>265</span> </span><span class="COMM">/**
+<span class='line'>266</span>  * A call transfer is in progress. It signals that an ongoing call transfer can be completed or canceled.
+<span class='line'>267</span>  * The application should implement this event to attach "completeTransfer" handler, if the higher level API does not fit specific needs. 
+<span class='line'>268</span>  * &lt;b>Important note:&lt;/b> This event could be triggered multiple times for one call transfer. (be careful not to create memory leaks with event handlers)
+<span class='line'>269</span>  * @name $.fn.cwic#callTransferInProgress
+<span class='line'>270</span>  * @since 4.0.0
+<span class='line'>271</span>  * @event
+<span class='line'>272</span>  * @param {Object} event
+<span class='line'>273</span>  * @param {Function} event.completeTransfer Function to be called to complete ongoing call transfer       
+<span class='line'>274</span>  */</span><span class="WHIT">
+<span class='line'>275</span> </span><span class="WHIT"> </span><span class="WHIT">
+<span class='line'>276</span> </span><span class="WHIT"> </span><span class="COMM">/**
+<span class='line'>277</span>  * An invalid certificate detected.
+<span class='line'>278</span>  * @name $.fn.cwic#invalidCertificate
+<span class='line'>279</span>  * @since 4.0.0
+<span class='line'>280</span>  * @event
+<span class='line'>281</span>  * @param {Object} event
+<span class='line'>282</span>  * @param {Function} event.respond(fingerprint,accept) Function to be called to reject or accept advertised invalid certificate.
+<span class='line'>283</span>  * @param {Object} event.info Additional info about advertised invalid certificate   
+<span class='line'>284</span>  * @param {String} event.info.certFingerprint Certificate fingerprint
+<span class='line'>285</span>  * @param {String} event.info.certSubjectCN Certificate Subject Common Name
+<span class='line'>286</span>  * @param {String} event.info.referenceId 
+<span class='line'>287</span>  * @param {Array} event.info.invalidReasons Array of invalid reasons
+<span class='line'>288</span>  * @param {String} event.info.subjectCertificateData 
+<span class='line'>289</span>  * @param {String} event.info.intermediateCACertificateData 
+<span class='line'>290</span>  * @param {Boolean} event.info.allowUserToAccept If true, certificate can be accepted with repond function
+<span class='line'>291</span>  */</span><span class="WHIT">
+<span class='line'>292</span> 
+<span class='line'>293</span> </span><span class="COMM">/**
+<span class='line'>294</span>  * Signals when authentication with Identity Provider is required during the SSO process. 
+<span class='line'>295</span>  * @name $.fn.cwic#ssoNavigateTo
+<span class='line'>296</span>  * @since 4.0.0
+<span class='line'>297</span>  * @event
+<span class='line'>298</span>  * @param {Object} event
+<span class='line'>299</span>  * @param {String} event.url URL to navigate to from popup/iFrame to continue with SSO process.      
+<span class='line'>300</span>  */</span><span class="WHIT">
+<span class='line'>301</span> </span><span class="WHIT"> </span><span class="WHIT">
+<span class='line'>302</span> </span><span class="WHIT"> </span><span class="COMM">/**
+<span class='line'>303</span>  * Ringtone changed
+<span class='line'>304</span>  * @name $.fn.cwic#ringtoneChange
+<span class='line'>305</span>  * @since 4.0.0
+<span class='line'>306</span>  * @event
+<span class='line'>307</span>  * @param {Object} event
+<span class='line'>308</span>  * @param {String} event.ringtone New ringtone name      
+<span class='line'>309</span>  */</span><span class="WHIT">
+<span class='line'>310</span> </span><span class="WHIT"> </span><span class="WHIT">
+<span class='line'>311</span> </span><span class="WHIT"> </span><span class="COMM">/**
+<span class='line'>312</span>  * List of ringtones is available
+<span class='line'>313</span>  * @name $.fn.cwic#ringtonesListAvailable
+<span class='line'>314</span>  * @since 4.0.0
+<span class='line'>315</span>  * @event
+<span class='line'>316</span>  * @param {Object} event
+<span class='line'>317</span>  * @param {Array} event.ringtones List of available ringtones     
+<span class='line'>318</span>  */</span><span class="WHIT">
+<span class='line'>319</span> </span><span class="WHIT"> </span><span class="WHIT">
+<span class='line'>320</span> </span><span class="COMM">/**
+<span class='line'>321</span>  * Signals weather the multimedia capability is enabled or not. Multimedia services are enabled only in authenticated state.
+<span class='line'>322</span>  * @name $.fn.cwic#multimediaCapabilities
+<span class='line'>323</span>  * @since 4.0.0
+<span class='line'>324</span>  * @event
+<span class='line'>325</span>  * @param {Object} event
+<span class='line'>326</span>  * @param {Boolean} event.multimediaCapability    
+<span class='line'>327</span>  */</span></pre></body></html>

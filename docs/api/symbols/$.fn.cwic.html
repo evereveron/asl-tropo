@@ -1,0 +1,4475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - $.fn.cwic</title>
+
+		<style type="text/css">
+			@charset "UTF-8";
+
+
+/* RESET STYLES */
+
+html,body,div,h1,h2,h3,h4,h5,h6,p,img,
+dl,dt,dd,ol,ul,li,table,caption,tbody,
+tfoot,thead,tr,th,td,form,fieldset,
+embed,object,applet {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BASICS */
+
+html, body {
+  /* overflow:hidden; /* keeps scrollbar off IE */
+  background-color:#fff;
+}
+
+body {
+  font-family:arial,sans-serif;
+  color:#000;
+  font-size:13px;
+  color:#333;
+}
+
+a, a code {
+  color:#006699;
+}
+
+a:active,
+a:active code {
+  color:#f00;
+} 
+
+a:visited,
+a:visited code {
+  color:#006699;
+}
+
+input, select,
+textarea, option, label {
+  font-family:inherit;
+  font-size:inherit;
+  padding:0;
+  margin:0;
+  vertical-align:middle;
+}
+
+option {
+  padding:0 4px;
+}
+
+p {
+  padding:0;
+  margin:0 0 1em;
+}
+
+code, pre {
+  color:#007000;
+  font-family:monospace;
+  line-height:1em;
+}
+
+var {
+  color:#007000;
+  font-style:italic;
+}
+
+pre {
+  border:1px solid #ccc;
+  background-color:#fafafa;
+  padding:10px;
+  margin:0 0 1em 1em;
+  overflow:auto;
+  line-height:inherit; /* fixes vertical scrolling in webkit */
+}
+
+h1,h2,h3,h4,h5 {
+  margin:1em 0;
+  padding:0;
+}
+
+p,ul,ol,dl,dd,dt,li {
+  line-height:1.3em;
+}
+
+ul,ol {
+  margin:0 0 .8em;
+  padding:0 0 0 2em;
+}
+
+li {
+  padding:0 0 .5em;
+}
+
+dl {
+  margin:0 0 1em 0;
+  padding:0;
+}
+
+dt {
+  margin:0;
+  padding:0;
+}
+
+dd {
+  margin:0 0 1em;
+  padding:0 0 0 2em;
+}
+
+li p {
+  margin:.5em 0 0;
+}
+
+dd p {
+  margin:1em 0 0;
+}
+
+li pre, li table, li img {
+  margin:.5em 0 0 1em;
+}
+
+dd pre,
+#jd-content dd table,
+#jd-content dd img {
+  margin:1em 0 0 1em;
+}
+
+li ul,
+li ol,
+dd ul,
+dd ol {
+  margin:0;
+  padding: 0 0 0 1em;
+}
+
+li li,
+dd li {
+  margin:0;
+  padding:.5em 0 0;
+}
+
+dl dl,
+ol dl,
+ul dl {
+  margin:0 0 1em;
+  padding:0;
+}
+
+table {
+  font-size:1em;
+  margin:0 0 1em;
+  padding:0;
+  border-collapse:collapse;
+  border-width:0;
+  empty-cells:show;
+}
+
+td,th {
+  border:1px solid #ccc;
+  padding:6px 12px;
+  text-align:left;
+  vertical-align:top;
+  background-color:inherit;
+}
+
+th {
+  background-color:#dee8f1;
+}
+
+td > p:last-child {
+  margin:0;
+}
+
+hr.blue {
+  background-color:#DDF0F2;
+  border:none;
+  height:5px;
+  margin:20px 0 10px;
+}
+
+blockquote {
+  margin: 0 0 1em 1em;
+  padding: 0 4em 0 1em;
+  border-left:2px solid #eee;
+}
+
+ul.navContainerOuter li a {
+font-weight:bold;
+}
+
+
+			/* default.css */
+
+#doc_wrapper {
+margin-left:auto;
+margin-right:auto;
+width:1200px;
+}
+
+#header {
+height:80px;
+position:relative;
+z-index:100;
+min-width:675px; /* min width for the tabs, before they wrap */
+padding:0 10px;
+border-bottom:3px solid #2970A6;
+}
+
+#headerLeft {
+position:absolute;
+padding:10px 0 0;
+left:8px;
+bottom:3px;
+/* width:600px; */
+}
+
+#headerRight {
+position:absolute;
+right:0;
+bottom:3px;
+padding:0;
+text-align:right;
+}
+
+#masthead-title {
+font-size:28px;
+color:#2f74ae;
+}
+
+#index {
+position:fixed;
+width:220px;
+top:90px;
+}
+
+ul.navContainerOuter {
+list-style:none;
+margin:0;
+padding:0;
+}
+
+#content {
+margin-left:260px;
+}
+
+.method_section {
+border:1px solid #ccc;
+border-radius:5px;
+-moz-border-radius:5px;
+padding:10px;
+margin-top:20px;
+}
+
+/*.method_section_heading {
+border:1px solid #ccc;
+border-radius:5px;
+-moz-border-radius:5px;
+color:#000000;
+background-color:#dee8f1;
+padding:10px;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+.type_title2{
+display:inline-block;
+border-radius:5px;
+-moz-border-radius:5px;
+background-color:#FFCC66;
+padding:6px 12px;
+font-weight:bold;
+}
+
+.type_text_wrap, .attributes {
+margin-left:10px;
+padding-top:5px;
+padding-bottom:5px;
+margin-bottom:20px;
+width:780px;
+}
+
+.attributes {
+color:#777;
+font-style:italic;
+}*/
+
+.summaryTable {
+border-collapse:collapse;
+width:100%;
+margin:0;
+}
+
+.summaryTable thead {
+display:none;
+}
+
+.summaryTable td {
+vertical-align:top;
+padding:8px;
+font-size:13px;
+line-height:15px;
+text-align:left;
+}
+
+.summaryTable td.attributes {
+width:150px;
+font-style:italic;
+color:#777;
+}
+
+div.fixedFont {
+margin-bottom:8px;
+color:#333;
+}
+
+div.fixedFont a {
+margin-right:8px;
+}
+
+div.description {
+color:#525252;
+}
+
+div.description h3 {
+display:block;
+width:150px;
+border-radius:5px;
+-moz-border-radius:5px;
+background-color:#FFCC66;
+padding:6px 12px;
+font-weight:bold;
+}
+
+hr {
+border:none;
+border-top:1px solid #ccc;
+height:1px;
+}
+
+caption, div.sectionTitle {
+border:1px solid #ccc;
+border-radius:5px;
+-moz-border-radius:5px;
+color:#000000;
+background-color:#dee8f1;
+padding:10px;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+pre.code {
+display:block;
+margin:5px 0;
+padding:8px;
+border:1px solid #ccc;
+}
+
+/*ul.inheritsList {
+list-style:square;
+margin-left:20px;
+padding-left:0;
+}*/
+
+.detailList {
+margin-left:0; 
+line-height:15px;
+}
+
+.detailList dt, .detailList dd {
+margin-left:0;
+padding-left:0;
+}
+
+.detailList .heading {
+font-weight:bold;
+padding-bottom:6px;
+margin-left:0;
+}
+
+.light, .light a:link, .light a:visited {
+color:#777;
+font-style:italic;
+}
+
+.fineprint {
+text-align:right;
+font-size:10px;
+}
+.syntaxhighlighter .toolbar {
+display:none !important;
+}
+
+			/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+  -moz-border-radius: 0 0 0 0 !important;
+  -webkit-border-radius: 0 0 0 0 !important;
+  background: none !important;
+  border: 0 !important;
+  bottom: auto !important;
+  float: none !important;
+  height: auto !important;
+  left: auto !important;
+  line-height: 1.1em !important;
+  margin: 0 !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  position: static !important;
+  right: auto !important;
+  text-align: left !important;
+  top: auto !important;
+  vertical-align: baseline !important;
+  width: auto !important;
+  box-sizing: content-box !important;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-size: 1em !important;
+  min-height: inherit !important;
+  min-height: auto !important;
+}
+
+.syntaxhighlighter {
+  width: 100% !important;
+  margin: 1em 0 1em 0 !important;
+  position: relative !important;
+  overflow: auto !important;
+  font-size: 1em !important;
+}
+.syntaxhighlighter.source {
+  overflow: hidden !important;
+}
+.syntaxhighlighter .bold {
+  font-weight: bold !important;
+}
+.syntaxhighlighter .italic {
+  font-style: italic !important;
+}
+.syntaxhighlighter .line {
+  white-space: pre !important;
+}
+.syntaxhighlighter table {
+  width: 100% !important;
+}
+.syntaxhighlighter table caption {
+  text-align: left !important;
+  padding: .5em 0 0.5em 1em !important;
+}
+.syntaxhighlighter table td.code {
+  width: 100% !important;
+}
+.syntaxhighlighter table td.code .container {
+  position: relative !important;
+}
+.syntaxhighlighter table td.code .container textarea {
+  box-sizing: border-box !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  background: white !important;
+  padding-left: 1em !important;
+  overflow: hidden !important;
+  white-space: pre !important;
+}
+.syntaxhighlighter table td.gutter .line {
+  text-align: right !important;
+  padding: 0 0.5em 0 1em !important;
+}
+.syntaxhighlighter table td.code .line {
+  padding: 0 1em !important;
+}
+.syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
+  padding-left: 0em !important;
+}
+.syntaxhighlighter.show {
+  display: block !important;
+}
+.syntaxhighlighter.collapsed table {
+  display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  padding: 0.1em 0.8em 0em 0.8em !important;
+  font-size: 1em !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+}
+.syntaxhighlighter.collapsed .toolbar span {
+  display: inline !important;
+  margin-right: 1em !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a {
+  padding: 0 !important;
+  display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a.expandSource {
+  display: inline !important;
+}
+.syntaxhighlighter .toolbar {
+  position: absolute !important;
+  right: 1px !important;
+  top: 1px !important;
+  width: 11px !important;
+  height: 11px !important;
+  font-size: 10px !important;
+  z-index: 10 !important;
+}
+.syntaxhighlighter .toolbar span.title {
+  display: inline !important;
+}
+.syntaxhighlighter .toolbar a {
+  display: block !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  padding-top: 1px !important;
+}
+.syntaxhighlighter .toolbar a.expandSource {
+  display: none !important;
+}
+.syntaxhighlighter.ie {
+  font-size: .9em !important;
+  padding: 1px 0 1px 0 !important;
+}
+.syntaxhighlighter.ie .toolbar {
+  line-height: 8px !important;
+}
+.syntaxhighlighter.ie .toolbar a {
+  padding-top: 0px !important;
+}
+.syntaxhighlighter.printing .line.alt1 .content,
+.syntaxhighlighter.printing .line.alt2 .content,
+.syntaxhighlighter.printing .line.highlighted .number,
+.syntaxhighlighter.printing .line.highlighted.alt1 .content,
+.syntaxhighlighter.printing .line.highlighted.alt2 .content {
+  background: none !important;
+}
+.syntaxhighlighter.printing .line .number {
+  color: #bbbbbb !important;
+}
+.syntaxhighlighter.printing .line .content {
+  color: black !important;
+}
+.syntaxhighlighter.printing .toolbar {
+  display: none !important;
+}
+.syntaxhighlighter.printing a {
+  text-decoration: none !important;
+}
+.syntaxhighlighter.printing .plain, .syntaxhighlighter.printing .plain a {
+  color: black !important;
+}
+.syntaxhighlighter.printing .comments, .syntaxhighlighter.printing .comments a {
+  color: #008200 !important;
+}
+.syntaxhighlighter.printing .string, .syntaxhighlighter.printing .string a {
+  color: blue !important;
+}
+.syntaxhighlighter.printing .keyword {
+  color: #006699 !important;
+  font-weight: bold !important;
+}
+.syntaxhighlighter.printing .preprocessor {
+  color: gray !important;
+}
+.syntaxhighlighter.printing .variable {
+  color: #aa7700 !important;
+}
+.syntaxhighlighter.printing .value {
+  color: #009900 !important;
+}
+.syntaxhighlighter.printing .functions {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .constants {
+  color: #0066cc !important;
+}
+.syntaxhighlighter.printing .script {
+  font-weight: bold !important;
+}
+.syntaxhighlighter.printing .color1, .syntaxhighlighter.printing .color1 a {
+  color: gray !important;
+}
+.syntaxhighlighter.printing .color2, .syntaxhighlighter.printing .color2 a {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .color3, .syntaxhighlighter.printing .color3 a {
+  color: red !important;
+}
+.syntaxhighlighter.printing .break, .syntaxhighlighter.printing .break a {
+  color: black !important;
+}
+
+			/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.alt1 {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.alt2 {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
+  background-color: #e0e0e0 !important;
+}
+.syntaxhighlighter .line.highlighted.number {
+  color: black !important;
+}
+.syntaxhighlighter table caption {
+  color: black !important;
+}
+.syntaxhighlighter .gutter {
+  color: #afafaf !important;
+}
+.syntaxhighlighter .gutter .line {
+  border-right: 3px solid #6ce26c !important;
+}
+.syntaxhighlighter .gutter .line.highlighted {
+  background-color: #6ce26c !important;
+  color: white !important;
+}
+.syntaxhighlighter.printing .line .content {
+  border: none !important;
+}
+.syntaxhighlighter.collapsed {
+  overflow: visible !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  color: blue !important;
+  background: white !important;
+  border: 1px solid #6ce26c !important;
+}
+.syntaxhighlighter.collapsed .toolbar a {
+  color: blue !important;
+}
+.syntaxhighlighter.collapsed .toolbar a:hover {
+  color: red !important;
+}
+.syntaxhighlighter .toolbar {
+  color: white !important;
+  background: #6ce26c !important;
+  border: none !important;
+}
+.syntaxhighlighter .toolbar a {
+  color: white !important;
+}
+.syntaxhighlighter .toolbar a:hover {
+  color: black !important;
+}
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a {
+  color: black !important;
+}
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+  color: #008200 !important;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a {
+  color: blue !important;
+}
+.syntaxhighlighter .keyword {
+  color: #006699 !important;
+}
+.syntaxhighlighter .preprocessor {
+  color: gray !important;
+}
+.syntaxhighlighter .variable {
+  color: #aa7700 !important;
+}
+.syntaxhighlighter .value {
+  color: #009900 !important;
+}
+.syntaxhighlighter .functions {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter .constants {
+  color: #0066cc !important;
+}
+.syntaxhighlighter .script {
+  font-weight: bold !important;
+  color: #006699 !important;
+  background-color: none !important;
+}
+.syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
+  color: gray !important;
+}
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
+  color: red !important;
+}
+
+.syntaxhighlighter .keyword {
+  font-weight: bold !important;
+}
+
+		</style>
+	</head>
+
+	<body>
+		<div id="doc_wrapper">
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+	<div id="headerLeft">
+		<div>
+			<div style="float: left; width: 20%;">
+				<a href="https://www.cisco.com" target="_blank"><img src="images/ciscologo_grey.jpg" alt="Cisco" /></a>
+			</div>
+			<div style="float: right; width: 80%;">
+				<h2 style="display:inline;">API Reference for Jabber SDK</h2><br>
+				<h4 style="display:inline;white-space:nowrap;">Cisco Unified Communications System Release 11.0 Maintenance Release 1</h2><br>
+				<h4 style="display:inline;white-space:nowrap;">Voice and Video Version 11.0.1 for Web</h4><br>
+			</div>
+		</div>
+		<div style="clear:both"></div> 			
+	</div>
+	
+	<div id="headerRight">
+		<div id="header_links" >
+			<a target="_blank" href="http://developer.cisco.com/web/jabber-developer">Jabber Developer Site</a><br>
+			<h5 style="display:inline;">Last Updated Fri Jan 15 2016</h5>
+		</div>			  			  
+	</div>
+</div>
+		<!-- end static/header.html -->
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="navContainerOuter">
+	
+	<li><a href="../symbols/%24.fn.cwic.html">$.fn.cwic</a></li>
+	
+	<li><a href="../symbols/%24.fn.cwic-errorMap.html">$.fn.cwic-errorMap</a></li>
+	
+	<li><a href="../symbols/%24.fn.cwic-errorMapEntry.html">$.fn.cwic-errorMapEntry</a></li>
+	
+	<li><a href="../symbols/%24.fn.cwic-settings.html">$.fn.cwic-settings</a></li>
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/aboutObject.html">aboutObject</a></li>
+	
+	<li><a href="../symbols/call.html">call</a></li>
+	
+	<li><a href="../symbols/device.html">device</a></li>
+	
+	<li><a href="../symbols/line.html">line</a></li>
+	
+	<li><a href="../symbols/participant.html">participant</a></li>
+	
+	<li><a href="../symbols/registration.html">registration</a></li>
+	
+	<li><a href="../symbols/window.html">window</a></li>
+	
+</ul>
+<p style="color:#000; font-size:10px; margin-top:20px;">
+	Any elements of the API not documented in the API reference are considered experimental and unsupported.<br />
+	These may be removed in a future release.<br /><br />
+	Copyright (c) 2007-2015 by Cisco Systems, Inc.
+</p>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1>
+				
+				Namespace $.fn.cwic
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p>
+				
+				
+			
+				
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_cwic.js.html">cwic.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			
+			<div class="method_section">
+				<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class $.fn.cwic.">
+					<caption>Namespace Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/%24.fn.cwic.html#constructor">$.fn.cwic</a></b>
+								</div>
+								<div class="description">CWIC is a jQuery plug-in to access the Cisco Web Communicator<br>Audio and Video media require the Cisco Web Communicator add-on to be installed <br><h3>Fields overview</h3><h3>Methods overview</h3>All cwic methods are called in the following manner<br><pre class="code">$('#selector').cwic('method',parameters)</pre><br><h3>Events overview</h3>All events are part of the cwic namespace.</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+				
+				
+				
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+				
+				
+				
+				<div class="method_section">
+					<table class="summaryTable" cellspacing="0" summary="A summary of the methods documented in the class $.fn.cwic.">
+						<caption>Method Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Method Attributes</th>
+								<th scope="col">Method Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-about">about</a></b>()
+									</div>
+									<div class="description">Versions, states and capabilities.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-addPreviewWindow">addPreviewWindow</a></b>(args)
+									</div>
+									<div class="description">Assign a video window object to preview (self-view).</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-cancelSSO">cancelSSO</a></b>()
+									</div>
+									<div class="description">Cancels ongoing Single Sign On procedure if internal 'canCancelSingleSignOn' capability is enabled.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-compareConversationObjects">compareConversationObjects</a></b>(c1, c2)
+									</div>
+									<div class="description">IMPORTANT: if new property is added to call object, this function must be updated !!!!</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-createVideoWindow">createVideoWindow</a></b>(settings)
+									</div>
+									<div class="description">Creates an object that can be passed to startConversation, addPreviewWindow, or updateConversation('addRemoteVideoWindow').</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-dock">dock</a></b>(args)
+									</div>
+									<div class="description">Docks an external video window created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-endConversation">endConversation</a></b>(iDivert, id)
+									</div>
+									<div class="description">Ends a conversation.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-getExternalWindowState">getExternalWindowState</a></b>()
+									</div>
+									<div class="description">Triggers an <a href="../symbols/%24.fn.cwic.html#event:externalWindowEvent">$.fn.cwic#event:externalWindowEvent</a> to be sent to the application with the current state of the external window.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-getMultimediaDevices">getMultimediaDevices</a></b>()
+									</div>
+									<div class="description">Gets a list of objects describing the multimedia devices installed on a system.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-getMultimediaDeviceVolume">getMultimediaDeviceVolume</a></b>(device, callback(volume))
+									</div>
+									<div class="description">Gets the current volume value for particular device.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-getUserAuthStatus">getUserAuthStatus</a></b>()
+									</div>
+									<div class="description">Gets the current user authorization status.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-hideExternalWindow">hideExternalWindow</a></b>()
+									</div>
+									<div class="description">Hides an external video window created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-init">init</a></b>(options)
+									</div>
+									<div class="description">Wait for the document to be ready, and try to load the Cisco Web Communicator add-on.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-manualSignIn">manualSignIn</a></b>()
+									</div>
+									<div class="description">Alias for <a href="../symbols/%24.fn.cwic.html#-registerPhone">$.fn.cwic-registerPhone</a></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-registerPhone">registerPhone</a></b>(args)
+									</div>
+									<div class="description">Register phone to CUCM (SIP register).</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-removePreviewWindow">removePreviewWindow</a></b>(args)
+									</div>
+									<div class="description">Remove a video window object from preview (self-view)</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-resetData">resetData</a></b>()
+									</div>
+									<div class="description">Clears cached user and system data.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-sendDTMF">sendDTMF</a></b>(digit, id)
+									</div>
+									<div class="description">Sends digit (String) as Dual-Tone Multi-Frequency (DTMF)</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setCaptureDevice">setCaptureDevice</a></b>(clientCaptureID:)
+									</div>
+									<div class="description">Sets the video capture device used by the Cisco Web Communicator.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setExternalWindowAlwaysOnTop">setExternalWindowAlwaysOnTop</a></b>(isAlwaysOnTop)
+									</div>
+									<div class="description">Controls whether external video windows created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or<a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a> are shown always on top (default) or not.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setExternalWindowSelfViewPipPosition">setExternalWindowSelfViewPipPosition</a></b>(coordinatesInPercentage)
+									</div>
+									<div class="description">Sets the position of self view window relative to parent external video window created by <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setExternalWindowShowControls">setExternalWindowShowControls</a></b>(showControls)
+									</div>
+									<div class="description">Controls whether a overlaid controls are shown in external video window created by <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a>.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setExternalWindowShowSelfViewPip">setExternalWindowShowSelfViewPip</a></b>(showPipSelfView)
+									</div>
+									<div class="description">Controls whether a picture-in-picture preview (self-view) is shown when <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a> is used to put a call in external video window.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setExternalWindowShowSelfViewPipBorder">setExternalWindowShowSelfViewPipBorder</a></b>(showSelfViewPipBorder)
+									</div>
+									<div class="description">Show/hide the border of self view in external video window created by <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setExternalWindowTitle">setExternalWindowTitle</a></b>(title)
+									</div>
+									<div class="description">Sets the window title used in external video windows created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setMicrophoneVolume">setMicrophoneVolume</a></b>()
+									</div>
+									<div class="description">Sets microphone volume.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setPlayoutDevice">setPlayoutDevice</a></b>(clientPlayoutID:)
+									</div>
+									<div class="description">Sets the audio playout device used by the Cisco Web Communicator.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setPlayRingerOnAllDevices">setPlayRingerOnAllDevices</a></b>()
+									</div>
+									<div class="description">Sets all capable devices as ringers.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setRecordingDevice">setRecordingDevice</a></b>(clientRecordingID:)
+									</div>
+									<div class="description">Sets the audio recording device used by the Cisco Web Communicator.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setRingerDevice">setRingerDevice</a></b>(clientRingerID:)
+									</div>
+									<div class="description">Sets the ringer device used by the Cisco Web Communicator.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setRingerVolume">setRingerVolume</a></b>()
+									</div>
+									<div class="description">Sets ringer volume.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setRingtone">setRingtone</a></b>(ringtone)
+									</div>
+									<div class="description">Sets ringtone.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-setSpeakerVolume">setSpeakerVolume</a></b>()
+									</div>
+									<div class="description">Sets speaker volume.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">showCallInExternalWindow</a></b>(id)
+									</div>
+									<div class="description">Shows the call in an external video window.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">showPreviewInExternalWindow</a></b>()
+									</div>
+									<div class="description">Shows preview (self-view) in an external video window.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-showUserAuthorization">showUserAuthorization</a></b>(denied, force)
+									</div>
+									<div class="description">Shows the user authorization dialog.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-shutdown">shutdown</a></b>(auto)
+									</div>
+									<div class="description">Shuts down the API<br><ul><li>Unregisters the phone</li><li>Unbinds all cwic events handlers</li><li>Clears all cwic data</li><li>Releases the Cisco Web Communicator add-on instance</li></ul></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-signOut">signOut</a></b>(args)
+									</div>
+									<div class="description"><br>Signs out a registered device from CUCM:<ul> <li>Ends any active call.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-startConversation">startConversation</a></b>(conversation)
+									</div>
+									<div class="description">Start a conversation with a participant.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-startDiscovery">startDiscovery</a></b>(args)
+									</div>
+									<div class="description">Initiates service discovery based sign-in.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-switchPhoneMode">switchPhoneMode</a></b>(options)
+									</div>
+									<div class="description">Switch mode on a session that is already authorized.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-undock">undock</a></b>()
+									</div>
+									<div class="description">Undocks an external video window previously docked by <a href="../symbols/%24.fn.cwic.html#-dock">$.fn.cwic-dock</a><br>Example use:</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-unregisterPhone">unregisterPhone</a></b>(args)
+									</div>
+									<div class="description"><br>Unregisters a phone from CUCM:<ul><li>Ends any active call if this is the last instance or forceLogout is set to true.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&lt;inner&gt; &nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#-updateConversation">updateConversation</a></b>(update, id)
+									</div>
+									<div class="description">Updates an existing conversation.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				</div>
+				
+				
+				
+				
+			
+<!-- ============================== events summary ======================== -->
+			
+				
+				
+				
+				<div class="method_section">
+					<table class="summaryTable" cellspacing="0" summary="A summary of the events documented in the class $.fn.cwic.">
+						<caption>Event Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Event Attributes</th>
+								<th scope="col">Event Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:callTransferInProgress">callTransferInProgress</a></b>(event)
+									</div>
+									<div class="description">A call transfer is in progress.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:conversationEnd">conversationEnd</a></b>(event, conversation)
+									</div>
+									<div class="description">A conversation has ended.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:conversationIncoming">conversationIncoming</a></b>(event, conversation, container)
+									</div>
+									<div class="description">A new conversation is being received, but has not yet started.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:conversationStart">conversationStart</a></b>(event, conversation, container)
+									</div>
+									<div class="description">A conversation has just started.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:conversationUpdate">conversationUpdate</a></b>(event, conversation, container)
+									</div>
+									<div class="description">One or more properties of a conversation have changed, such as state or participants.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:error">error</a></b>(event)
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:externalWindowEvent">externalWindowEvent</a></b>(event)
+									</div>
+									<div class="description">A property has changed on the external video window created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:invalidCertificate">invalidCertificate</a></b>(event)
+									</div>
+									<div class="description">An invalid certificate detected.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:mmDeviceChange">mmDeviceChange</a></b>(event)
+									</div>
+									<div class="description">A change to the list of local multimedia devices has occurred.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:multimediaCapabilities">multimediaCapabilities</a></b>(event)
+									</div>
+									<div class="description">Signals weather the multimedia capability is enabled or not.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:ringtoneChange">ringtoneChange</a></b>(event)
+									</div>
+									<div class="description">Ringtone changed</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:ringtonesListAvailable">ringtonesListAvailable</a></b>(event)
+									</div>
+									<div class="description">List of ringtones is available</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:ssoNavigateTo">ssoNavigateTo</a></b>(event)
+									</div>
+									<div class="description">Signals when authentication with Identity Provider is required during the SSO process.</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont"><b><a href="../symbols/%24.fn.cwic.html#event:system">system</a></b>(event)
+									</div>
+									<div class="description">Called when the phone changes state.</div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				</div>
+				
+				
+				
+				
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			
+			<div class="method_section">
+				<a name="constructor"> </a>
+				<div class="sectionTitle">
+					Namespace Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>$.fn.cwic</b>
+				</div>
+				
+				<div class="description">
+					CWIC is a jQuery plug-in to access the Cisco Web Communicator<br>Audio and Video media require the Cisco Web Communicator add-on to be installed <br><h3>Fields overview</h3><h3>Methods overview</h3>All cwic methods are called in the following manner<br><pre class="code">$('#selector').cwic('method',parameters)</pre><br><h3>Events overview</h3>All events are part of the cwic namespace.  For example:<ul><li>conversationStart.cwic</li><li>system.cwic</li><li>error.cwic</li></ul><h4>Example conversation events:</h4>These are conversation-related events that can be triggered by the SDK.<br>The event handlers are passed the conversation properties as a single object. For example:<br>
+					
+				</div>
+				
+				
+				
+					<script type="syntaxhighlighter" class="brush: js"><![CDATA[// start an audio conversation with phone a number and bind to conversation eventsjQuery('#conversation')  .cwic('startConversation', '+1 234 567')  // container defaults to $(this)  .bind('conversationStart.cwic', function(event, conversation, container) {     console.log('conversation has just started');     // container is jQuery('#conversation')   })   .bind('conversationUpdate.cwic', function(event, conversation) {     console.log('conversation has just been updated');   })   .bind('conversationEnd.cwic', function(event, conversation) {     console.log('conversation has just ended');   });]]></script>
+				
+					<script type="syntaxhighlighter" class="brush: js"><![CDATA[// listen for incoming conversationjQuery('#phone')  .bind('conversationIncoming.cwic', function(event, conversation, container) {    console.log('incoming conversation with id ' + conversation.id);    // attach the 'toast' container to the DOM and bind to events    container      .appendTo('#phone')      .bind('conversationUpdate.cwic', function(event, conversation) {        // update on incoming conversation      })      .bind('conversationEnd.cwic', function(event, conversation) {        // incoming conversation has ended        container.remove();      });    // suppose UI has a button with id 'answer'    jQuery('#answer').click(function() {      // answer the incoming conversation      // conversation has an id property, so startConversation accepts it      // use element #conversation as container      jQuery('#conversation').cwic('startConversation', conversation);      // remove incoming container      container.remove();    });  });]]></script>
+				
+				
+				
+				
+					
+						<dl class="detailList">
+						<dt class="heading">Parameters:</dt>
+						
+							<dt>
+								<span class="light fixedFont">{String}</span>  <b>method</b>
+								
+							</dt>
+								<dd>The name of the method to call</dd>
+						
+							<dt>
+								<span class="light fixedFont">{Variable}</span>  <b>arguments</b>
+								
+							</dt>
+								<dd>trailing arguments are passed to the specific call see methods below</dd>
+						
+						</dl>
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+
+<!-- ============================== method details ========================= -->		
+			
+				
+				<div class="method_section">
+					<div class="sectionTitle">
+						Method Detail
+					</div>
+					
+						<a name="-about"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						<span class="light">{<a href="../symbols/aboutObject.html">aboutObject</a>}</span>
+						<b>about</b>()
+						
+						</div>
+						<div class="description">
+							Versions, states and capabilities.
+							
+							
+						</div>
+						
+						
+						
+							
+							
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Returns:</dt>
+								
+									<dd><span class="light fixedFont">{<a href="../symbols/aboutObject.html">aboutObject</a>}</span> </dd>
+								
+								</dl>
+							
+							
+							
+
+						<hr />
+					
+						<a name="-addPreviewWindow"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>addPreviewWindow</b>(args)
+						
+						</div>
+						<div class="description">
+							Assign a video window object to preview (self-view).
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[$('#phone').cwic('addPreviewWindow',{previewWindow: 'previewVideoObjectID'});$('#phone').cwic('addPreviewWindow',{previewWindow: previewVideoObject, window: iFramePinPWindow});$('#phone').cwic('addPreviewWindow',{previewWindow: 'previewVideoObjectID', error: function(err){console.log(err)}});]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>args</b>
+										
+									</dt>
+									<dd>arguments object</dd>
+								
+									<dt>
+										<span class="light fixedFont">{DOMWindow}</span> <b>args.window</b>
+										<i>Optional</i>
+									</dt>
+									<dd>DOM Window that contains the plug-in Object defaults to current window</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object}</span> <b>args.previewWindow</b>
+										
+									</dt>
+									<dd>ID or DOM element of preview window</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.error</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Called when arguments object is malformed, i.e. args.previewWindow ID or DOM element is non-existent or malformed</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-cancelSSO"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>cancelSSO</b>()
+						
+						</div>
+						<div class="description">
+							Cancels ongoing Single Sign On procedure if internal 'canCancelSingleSignOn' capability is enabled. 'canCancelSingleSignOn' is enabled immediately before 'ssoNavigateTo.cwic' event is triggered. It is disabled again after the token is acquired or after 'cancelSSO' call.
+							
+							
+						</div>
+						
+						
+						
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-compareConversationObjects"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						<span class="light">{boolean}</span>
+						<b>compareConversationObjects</b>(c1, c2)
+						
+						</div>
+						<div class="description">
+							IMPORTANT: if new property is added to call object, this function must be updated !!!!
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<b>c1</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<b>c2</b>
+										
+									</dt>
+									<dd></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Returns:</dt>
+								
+									<dd><span class="light fixedFont">{boolean}</span> </dd>
+								
+								</dl>
+							
+							
+							
+
+						<hr />
+					
+						<a name="-createVideoWindow"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>createVideoWindow</b>(settings)
+						
+						</div>
+						<div class="description">
+							Creates an object that can be passed to startConversation, addPreviewWindow, or updateConversation('addRemoteVideoWindow').The object is inserted into the element defined by the jQuery context - e.g. jQuery('#placeholder').cwic('createVideoWindow')inserts the videowindow under jQuery('#placeholder')<br><br>NOTE: This function will just 'do nothing' and the success() callback will never be called if either of the following are true:<ul><li>video is not supported on the platform, see <a href="../symbols/aboutObject.html#capabilities:video">aboutObject#capabilities:video</a></li><li>video plugin objects are not supported in the browser, see <a href="../symbols/aboutObject.html#capabilities:videoPluginObject">aboutObject#capabilities:videoPluginObject</a></li></ul>NOTE: System resources used when video windows are created cannot be reliably released on all platforms.  The application should reuse thevideo objects returned by createVideoWindow, rather than creating new windows for each call to avoid performance problems on some client platforms.
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[$('#videocontainer').cwic('createVideoWindow', {     id: 'videoplugin',     success: function(pluginid) {$('#conversation').cwic('updateConversation',{'addRemoteVideoWindow': pluginid});}});]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>settings</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Settings to use when creating the video render object</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>settings.id</b>
+										<i>Optional, Default:  generated</i>
+									</dt>
+									<dd>The DOM ID of the element to be created</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>settings.success</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Called when the object is loaded and ready for use plug-in ID is passed as a parameter</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>settings.onload</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Not recommended for video windows created in the same window as the main phone plug-in.<br>Mandatory in popup windows or iframes. The string must be the name of a function in the global scope, and the functionmust call parent or opener <a href="../symbols/window.html#._cwic_onPopupVideoPluginLoaded">window._cwic_onPopupVideoPluginLoaded</a>.  This function will be called in the onload handlerof the video object.<br>Single parameter is the videoplugin object that must be passed to the parent handler.</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-dock"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>dock</b>(args)
+						
+						</div>
+						<div class="description">
+							Docks an external video window created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.<br>Example use:
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[// simple case where the target video container is on the same HTML page as cwic.js file$('#videocontainer').cwic('dock');// or an extended form where the window object along with target element could be specified. // Window object could be from an iFrame or a popup with the same origin as "parent" page$().cwic('dock', {window: windowElementOfSomeHtmlDocument, element: targetElementForVideoOverlay});]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>args</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Information about target element for video overlay</dd>
+								
+									<dt>
+										<span class="light fixedFont">{DOMWindow}</span> <b>args.window</b>
+										
+									</dt>
+									<dd>Window object in which the target element is located</dd>
+								
+									<dt>
+										<span class="light fixedFont">{DOMElement}</span> <b>args.element</b>
+										
+									</dt>
+									<dd>Target element for video overlay</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.2</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-endConversation"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>endConversation</b>(iDivert, id)
+						
+						</div>
+						<div class="description">
+							Ends a conversation. Triggers a conversationEnd event.
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[ // typeof input is stringjQuery('#phone').cwic('endConversation', '1234'); // orjQuery('#phone').cwic('endConversation', conversation.id); // typeof input is objectjQuery('#phone').cwic('endConversation', conversation); // let cwic find the conversation data attached to #conversationjQuery('#conversation').cwic('endConversation'); // iDivert the conversationjQuery('#myconversation').cwic('endConversation', true); // iDivert and specify conversation id as a stringjQuery('#phone').cwic('endConversation', true, '1234');]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{boolean}</span> <b>iDivert</b>
+										
+									</dt>
+									<dd>If true, redirects the call to voice mail. See UCM documentation on the Immediate Divert (iDivert) feature for details. The call can be iDiverted only if <a href="../symbols/call.html#capabilities">call#capabilities</a> contains 'canImmediateDivert',</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object}</span> <b>id</b>
+										
+									</dt>
+									<dd>A conversation identifier (String) or an Object containing an id property.</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-getExternalWindowState"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>getExternalWindowState</b>()
+						
+						</div>
+						<div class="description">
+							Triggers an <a href="../symbols/%24.fn.cwic.html#event:externalWindowEvent">$.fn.cwic#event:externalWindowEvent</a> to be sent to the application with the current state of the external window.
+							
+							
+						</div>
+						
+						
+						
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-getMultimediaDevices"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>getMultimediaDevices</b>()
+						
+						</div>
+						<div class="description">
+							Gets a list of objects describing the multimedia devices installed on a system.
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[ see sample.html]]></script>
+						
+						
+						
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Returns:</dt>
+								
+									<dd>a list of objects describing the multimedia devices with the following properties:<ul>  <li>deviceID: unique device ID</li>  <li>deviceName: {string} human readable device name</li>  <li>vendorID: {string} unique vendor ID</li>  <li>productID: {string} vendor product ID</li>  <li>hardwareID: {string} hardware dependent ID</li>  <li>canRecord: {boolean} indicates whether this object can be used as an audio recording device</li>  <li>canPlayout: {boolean} indicates whether this object can be used as an audio playout device</li>  <li>canCapture: {boolean} indicates whether this object can be used as a video capture device</li>  <li>canRing: {boolean} indicates whether this object can be used as a ringer device</li>  <li>isDefault:  {boolean} indicates whether this object represents the default device of the type indicated by the canRecord, canPlayout, and canCapture flags</li>  <li>recordingName: {string} human readable name for the audio recording function of this device</li>  <li>playoutName: {string} human readable name for the audio playout function of this device</li>  <li>captureName: {string} human readable name for the video capture function of this device</li>  <li>recordingID: {string} ID for the audio recording function of this device</li>  <li>playoutID: {string} ID for the audio playout function of this device</li>  <li>captureID: {string} ID for the video capture function of this device</li>  <li>clientRecordingID: {string} the ID to pass to setRecordingDevice to select this device as the audio recording device</li>  <li>clientPlayoutID: {string} the ID to pass to setPlayoutDevice to select this device as the audio playout device</li>  <li>clientCaptureID: {string} the ID to pass to setCaptureDevice to select this device as the video capture device</li>  <li>isSelectedRecordingDevice: {boolean} indicates whether this is the currently selected audio recording device</li>  <li>isSelectedPlayoutDevice: {boolean} indicates whether this is the currently selected audio playout device</li>  <li>isSelectedCaptureDevice: {boolean} indicates whether this is the currently selected video capture device</li>  </ul>  In order to use the list, the client should check the canXXXX fields to determine if a device can be passed as a particular function, then pass the clientXXXID  to the correct setXXXXDevice function.  Depending on the platform, devices with multiple functions may show up as a single entry with multiple IDs, or multiple times with similar or different IDs.</dd>
+								
+								</dl>
+							
+							
+							
+
+						<hr />
+					
+						<a name="-getMultimediaDeviceVolume"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>getMultimediaDeviceVolume</b>(device, callback(volume))
+						
+						</div>
+						<div class="description">
+							Gets the current volume value for particular device. Async function.Works on Windows platform only.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>device</b>
+										
+									</dt>
+									<dd>Type of device. One of: "Speaker", "Microphone", "Ringer"</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>callback(volume)</b>
+										
+									</dt>
+									<dd>Callback to be called with volume value</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-getUserAuthStatus"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						<span class="light">{String}</span>
+						<b>getUserAuthStatus</b>()
+						
+						</div>
+						<div class="description">
+							Gets the current user authorization status.
+							
+							
+						</div>
+						
+						
+						
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.0.1</dd>
+								</dl>
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Returns:</dt>
+								
+									<dd><span class="light fixedFont">{String}</span> a value indicating the current user authorization status.<ul><li>"UserAuthorized" indicates the user has authorized the Cisco Web Communicator add-on and it is ready to use.</li><li>"MustShowAuth" indicates the application must call <a href="../symbols/%24.fn.cwic.html#-showUserAuthorization">$.fn.cwic-showUserAuthorization</a> to show the user authorization dialog.</li><li>"UserDenied" indicates the user has denied the application access to the Cisco Web Communicator add-on.</li><li>"UserAuthPending" indicates the dialog box is currently displayed and the user has not yet selected "allow", "deny", or "always allow".</li><li>"Unknown" indicates status cannot be determined because delay authorization feature is not supported by the current Cisco Web Communicator add-on.This case will trigger <a href="../symbols/%24.fn.cwic-errorMap.html#.OperationNotSupported">$.fn.cwic-errorMap.OperationNotSupported</a> as well.</li></ul></dd>
+								
+								</dl>
+							
+							
+							
+
+						<hr />
+					
+						<a name="-hideExternalWindow"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>hideExternalWindow</b>()
+						
+						</div>
+						<div class="description">
+							Hides an external video window created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-init"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>init</b>(options)
+						
+						</div>
+						<div class="description">
+							Wait for the document to be ready, and try to load the Cisco Web Communicator add-on.<br>If cwic was successfully initialized, call the options.ready handler, <br>passing some stored properties (possibly empty), <br>otherwise call the options.error handler<br>
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[jQuery('#phone').cwic('init', {  ready: function(defaults) {    console.log('sdk is ready');  },  error: function(error) {    console.log('sdk cannot be initialized : ' + error.message);  },  log: function(msg, exception) {    console.log(msg); if (exception) { console.log(exception); }  },  errorMap: {    // localized message for error code 'AuthenticationFailure'    AuthenticationFailure : { message: 'Nom d'utilisateur ou mot de passe incorrect' }  },  predictDevice: function(args) {      return settings.devicePrefix + args.username;  }});]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>options</b>
+										
+									</dt>
+									<dd>Is a set of key/value pairs to configure the phone registration.  See <a href="../symbols/%24.fn.cwic-settings.html">$.fn.cwic-settings</a> for options.</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-manualSignIn"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>manualSignIn</b>()
+						
+						</div>
+						<div class="description">
+							Alias for <a href="../symbols/%24.fn.cwic.html#-registerPhone">$.fn.cwic-registerPhone</a>
+							
+							
+						</div>
+						
+						
+						
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-registerPhone"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>registerPhone</b>(args)
+						
+						</div>
+						<div class="description">
+							Register phone to CUCM (SIP register). Used for manual type of registration, in which connection parameters are manually configured (tftp, ccmcip, cti).
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[// *************************************// register with lab CUCM in default mode (SoftPhone)jQuery('#phone').cwic('registerPhone', {    user: 'fbar',    password: 'secret', // clear password    cucm: '1.2.3.4',    success: function (registration) {        console.log('registered in mode ' + registration.mode);        console.log('registered with device ' + registration.device.name);    }});]]></script>
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[// *************************************// register with Alpha CUCM in DeskPhone mode with encrypted passwordjQuery('#phone').cwic('registerPhone', {    user: 'fbar',    password: {        encoded: 'GJH$&*"@$%$^BLKJ==',        cipher: 'cucm'    },    mode: 'DeskPhone',    cucm: '1.2.3.4',    success: function (registration) {        console.log('registered in mode ' + registration.mode);        console.log('registered with device ' + registration.device.name);    });]]></script>
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[// *************************************// register with Alpha CUCM in SoftPhone mode, select ECP{user} devicejQuery('#phone').cwic('registerPhone', {    user: 'fbar',    password: {        encoded: 'GJH$&*"@$%$^BLKJ==',        cipher: 'cucm'    },    mode: 'SoftPhone',    cucm: {        ccmcip: ['1.2.3.4'],        tftp: ['1.2.3.5']    },    devicesAvailable: function (devices, phoneMode, callback) {        for (var i = 0; i &lt; devices.length; i++) {            var device = devices[i];            if (device.name.match(/^ECP/i)) {                callback(phoneMode, device);            } // starts with 'ECP'        }        return; // stop registration if no ECP{user} device found    },    success: function (registration) {        console.log('registered in mode ' + registration.mode);        console.log('registered with device ' + registration.device.name);    },    error: function (err) {        console.log('cannot register phone: ' + err.message);    });]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<b>args</b>
+										
+									</dt>
+									<dd>A map with:</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>args.user</b>
+										
+									</dt>
+									<dd>The CUCM end user name (required)</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object}</span> <b>args.password</b>
+										
+									</dt>
+									<dd>String - clear password. Object - {encrypted: encoded password, cipher:'cucm'}</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object|Array}</span> <b>args.cucm</b>
+										
+									</dt>
+									<dd>The list of CUCM(s) to attempt to register with (required).<br>If String, it will be used as a TFTP, CCMCIP and CTI address.<br>If Array, a list of String or Object as described above.Three is the maximum number of addresses per server (TFTP, CCMCIP, CTI).</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String[]}</span> <b>args.cucm.tftp</b>
+										<i>Optional</i>
+									</dt>
+									<dd>TFTP addresses. Maximum three values.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String[]}</span> <b>args.cucm.ccmcip</b>
+										<i>Optional</i>
+									</dt>
+									<dd>CCMCIP addresses (will use tftp values if not present). Maximum three values.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String[]}</span> <b>args.cucm.cti</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Since: 2.1.1 <br>CTI addresses (will use tftp values if not present). Maximum three values.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>args.mode</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Register the phone in this mode. Available modes are "SoftPhone" or "DeskPhone". Default of intelligent guess is applied after a device is selected.<br></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.devicesAvailable(devices, phoneMode, callback)</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Callback called after successful authentication. Might be called multiple times.If this callback is not specified, cwic applies the default device selection algorithm.  An array of <a href="../symbols/device.html">device</a> objects is passed so the application can select the device.<br>To complete the device registration, call the callback function that is passed in to devicesAvailable as the third parameter.The callback function is defined in the API, but it must be called by the function that is specified as the devicesAvailable parameter.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.error(err)</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Callback called if the registration fails.  <a href="../symbols/%24.fn.cwic-errorMapEntry.html">$.fn.cwic-errorMapEntry</a> is passed as parameter.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>args.forceRegistration</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Specifies whether to forcibly unregister other softphone instances with CUCM. Default is false. See GracefulRegistration doc for more info.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.success(registration)</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Callback called when registration succeeds. A <a href="../symbols/registration.html">registration</a> object is passed to the callback:registerPhone examples <br></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-removePreviewWindow"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>removePreviewWindow</b>(args)
+						
+						</div>
+						<div class="description">
+							Remove a video window object from preview (self-view)
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[$('#phone').cwic('removePreviewWindow', {  previewWindow: 'previewVideoObjectID'});$('#phone').cwic('removePreviewWindow', {  previewWindow: previewVideoObject,   window: iFramePinPWindow});$('#phone').cwic('removePreviewWindow', {  previewWindow: 'previewVideoObjectID',   error: function (err) {    console.log(err)  }});]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>args</b>
+										
+									</dt>
+									<dd>arguments object</dd>
+								
+									<dt>
+										<span class="light fixedFont">{DOMWindow}</span> <b>args.window</b>
+										<i>Optional</i>
+									</dt>
+									<dd>DOM Window that contains the plug-in Object defaults to current window</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object}</span> <b>args.previewWindow</b>
+										
+									</dt>
+									<dd>id or DOM element of preview window</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.error</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Called when arguments object is malformed, i.e. args.previewWindow ID or DOM element is non-existent or malformed</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-resetData"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>resetData</b>()
+						
+						</div>
+						<div class="description">
+							Clears cached user and system data. Must be called before manual sign in if previous sign in type was discovery based.Can only be called in signed out state.
+							
+							
+						</div>
+						
+						
+						
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-sendDTMF"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>sendDTMF</b>(digit, id)
+						
+						</div>
+						<div class="description">
+							Sends digit (String) as Dual-Tone Multi-Frequency (DTMF)
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[ // SEND DTMF EXAMPLEjQuery('#phone').cwic('sendDTMF', '5', '1234');jQuery('#mydiv').cwic('sendDTMF', '3', conversation.id);jQuery('body').cwic('sendDTMF', '7', conversation);jQuery('#conversation').cwic('sendDTMF', '1');]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>digit</b>
+										
+									</dt>
+									<dd>Dual-Tone Multi-Frequency (DTMF) digit to send.  Does not trigger any event.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object}</span> <b>id</b>
+										<i>Optional</i>
+									</dt>
+									<dd>a {String} conversation identifier or an {Object} containing an id property</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setCaptureDevice"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setCaptureDevice</b>(clientCaptureID:)
+						
+						</div>
+						<div class="description">
+							Sets the video capture device used by the Cisco Web Communicator.  To set a device, pass the clientCaptureID from a device with the canCapture flag set to true.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>clientCaptureID:</b>
+										
+									</dt>
+									<dd>clientCaptureID retrieved from getMultimediaDevices()</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setExternalWindowAlwaysOnTop"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setExternalWindowAlwaysOnTop</b>(isAlwaysOnTop)
+						
+						</div>
+						<div class="description">
+							Controls whether external video windows created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or<a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a> are shown always on top (default) or not.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>isAlwaysOnTop</b>
+										
+									</dt>
+									<dd>Set to false to remove the always on top property.  Set to true to restore default behavior.</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setExternalWindowSelfViewPipPosition"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setExternalWindowSelfViewPipPosition</b>(coordinatesInPercentage)
+						
+						</div>
+						<div class="description">
+							Sets the position of self view window relative to parent external video window created by <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>coordinatesInPercentage</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Number|String}</span> <b>coordinatesInPercentage.topLeftX</b>
+										
+									</dt>
+									<dd>Distance of top-left corner of self view window from the left edge of parent window (in percentage - 0 to 100).</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Number|String}</span> <b>coordinatesInPercentage.topLeftY</b>
+										
+									</dt>
+									<dd>Distance of top-left corner of self view window from the top edge of parent window (in percentage - 0 to 100).</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Number|String}</span> <b>coordinatesInPercentage.bottomRightX</b>
+										
+									</dt>
+									<dd>Distance of bottom-right corner of self view window from the left edge of parent window (in percentage - 0 to 100).</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Number|String}</span> <b>coordinatesInPercentage.bottomRightY</b>
+										
+									</dt>
+									<dd>Distance of bottom-right corner of self view window from the top edge of parent window (in percentage - 0 to 100).</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setExternalWindowShowControls"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setExternalWindowShowControls</b>(showControls)
+						
+						</div>
+						<div class="description">
+							Controls whether a overlaid controls are shown in external video window created by <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>showControls</b>
+										
+									</dt>
+									<dd>Set to false to turn off the overlaid call controls. Set to true to restore default behavior.</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setExternalWindowShowSelfViewPip"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setExternalWindowShowSelfViewPip</b>(showPipSelfView)
+						
+						</div>
+						<div class="description">
+							Controls whether a picture-in-picture preview (self-view) is shown when <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a> is used to put a call in external video window.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>showPipSelfView</b>
+										
+									</dt>
+									<dd>Set to false to turn off the picture-in-picture.  Set to true to restore default behavior.</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setExternalWindowShowSelfViewPipBorder"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setExternalWindowShowSelfViewPipBorder</b>(showSelfViewPipBorder)
+						
+						</div>
+						<div class="description">
+							Show/hide the border of self view in external video window created by <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>showSelfViewPipBorder</b>
+										
+									</dt>
+									<dd></dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>11.0.1</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setExternalWindowTitle"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setExternalWindowTitle</b>(title)
+						
+						</div>
+						<div class="description">
+							Sets the window title used in external video windows created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>title</b>
+										
+									</dt>
+									<dd>A string value to be used as the window title for the exernal video window.</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setMicrophoneVolume"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setMicrophoneVolume</b>()
+						
+						</div>
+						<div class="description">
+							Sets microphone volume. Works on Windows platform only.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String|Number}</span> <b>args.volume</b>
+										
+									</dt>
+									<dd>Volume to set (0 to 100)</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.success</b>
+										
+									</dt>
+									<dd>Success callback</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.error</b>
+										
+									</dt>
+									<dd>Error callback</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setPlayoutDevice"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setPlayoutDevice</b>(clientPlayoutID:)
+						
+						</div>
+						<div class="description">
+							Sets the audio playout device used by the Cisco Web Communicator.  To set a device, pass the clientPlayoutID from a device with the canPlayout flag set to true.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>clientPlayoutID:</b>
+										
+									</dt>
+									<dd>clientPlayoutID retrieved from getMultimediaDevices()</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setPlayRingerOnAllDevices"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setPlayRingerOnAllDevices</b>()
+						
+						</div>
+						<div class="description">
+							Sets all capable devices as ringers. Works on Windows platform only.
+							
+							
+						</div>
+						
+						
+						
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setRecordingDevice"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setRecordingDevice</b>(clientRecordingID:)
+						
+						</div>
+						<div class="description">
+							Sets the audio recording device used by the Cisco Web Communicator.  To set a device, pass the clientRecordingID from a device with the canRecord flag set to true.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>clientRecordingID:</b>
+										
+									</dt>
+									<dd>clientRecordingID retrieved from getMultimediaDevices()</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setRingerDevice"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setRingerDevice</b>(clientRingerID:)
+						
+						</div>
+						<div class="description">
+							Sets the ringer device used by the Cisco Web Communicator. To set a device, pass the clientRingerID from a device with the canRing flag set to true.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>clientRingerID:</b>
+										
+									</dt>
+									<dd>clientRingerID retrieved from getMultimediaDevices()</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setRingerVolume"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setRingerVolume</b>()
+						
+						</div>
+						<div class="description">
+							Sets ringer volume. Works on Windows platform only.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String|Number}</span> <b>args.volume</b>
+										
+									</dt>
+									<dd>Volume to set (0 to 100)</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.success</b>
+										
+									</dt>
+									<dd>Success callback</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.error</b>
+										
+									</dt>
+									<dd>Error callback</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setRingtone"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setRingtone</b>(ringtone)
+						
+						</div>
+						<div class="description">
+							Sets ringtone. Will trigger ringtoneChange.cwic event. Works on Windows platform only.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>ringtone</b>
+										
+									</dt>
+									<dd>ringtone name</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-setSpeakerVolume"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>setSpeakerVolume</b>()
+						
+						</div>
+						<div class="description">
+							Sets speaker volume. Works on Windows platform only.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String|Number}</span> <b>args.volume</b>
+										
+									</dt>
+									<dd>Volume to set (0 to 100)</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.success</b>
+										
+									</dt>
+									<dd>Success callback</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.error</b>
+										
+									</dt>
+									<dd>Error callback</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-showCallInExternalWindow"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>showCallInExternalWindow</b>(id)
+						
+						</div>
+						<div class="description">
+							Shows the call in an external video window.  If an external video window already exists,the current contents will be replaced by the video stream for the selected call.  Otherwise, a new external window will be created.To detect changes in the window state, for example the user closes the window, use <a href="../symbols/%24.fn.cwic.html#event:externalWindowEvent">$.fn.cwic#event:externalWindowEvent</a>.<br>By default the external video window will have always on top property and will include a picture-in-picture preview (self-view).This can be changed using <a href="../symbols/%24.fn.cwic.html#-setExternalWindowAlwaysOnTop">$.fn.cwic-setExternalWindowAlwaysOnTop</a> and <a href="../symbols/%24.fn.cwic.html#-setExternalWindowShowSelfViewPip">$.fn.cwic-setExternalWindowShowSelfViewPip</a>, respectively.<br>If the user closes an external video window that contains a video call, the call will be ended.Use <a href="../symbols/%24.fn.cwic.html#-hideExternalWindow">$.fn.cwic-hideExternalWindow</a> to remove the window without interupting the call.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object}</span> <b>id</b>
+										<i>Optional</i>
+									</dt>
+									<dd>A {String} conversation identifier or an {Object} containing an id property.</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-showPreviewInExternalWindow"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>showPreviewInExternalWindow</b>()
+						
+						</div>
+						<div class="description">
+							Shows preview (self-view) in an external video window.  If an external video window already exists,the current contents will be replaced by the preview.  Otherwise, a new external window will be created.To detect changes in the window state, for example the user closes the window, use <a href="../symbols/%24.fn.cwic.html#event:externalWindowEvent">$.fn.cwic#event:externalWindowEvent</a>.<br>By default the external video window will have always on top property.  This can be changed using <a href="../symbols/%24.fn.cwic.html#-setExternalWindowAlwaysOnTop">$.fn.cwic-setExternalWindowAlwaysOnTop</a>.<br>If preview in picture-in-picture is enabled (see <a href="../symbols/%24.fn.cwic.html#-setExternalWindowShowSelfViewPip">$.fn.cwic-setExternalWindowShowSelfViewPip</a>)it will not be visible while the preview is in the full window.<br>Use <a href="../symbols/%24.fn.cwic.html#-hideExternalWindow">$.fn.cwic-hideExternalWindow</a> to remove the window.
+							
+							
+						</div>
+						
+						
+						
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-showUserAuthorization"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>showUserAuthorization</b>(denied, force)
+						
+						</div>
+						<div class="description">
+							Shows the user authorization dialog.  This API must only be called if the application has provided a delayedUserAuth callbackin the settings object provided to the init function, and the status returned by <a href="../symbols/%24.fn.cwic.html#-getUserAuthStatus">$.fn.cwic-getUserAuthStatus</a> is "MustShowAuth"  If the applicationreceives the <a href="../symbols/%24.fn.cwic-settings.html#.delayedUserAuth">$.fn.cwic-settings.delayedUserAuth</a> callback, the user authorization state will always be "MustShowAuth" so the application can safely callshowUserAuthorization from within the delayedUserAuth callback without checking getUserAuthStatus.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>denied</b>
+										
+									</dt>
+									<dd>A callback that will be called if the user selects "deny" from the user authorization dialog.  If the userselects allow or always allow, the settings.ready callback will be called.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>force</b>
+										<i>Optional, Default: false</i>
+									</dt>
+									<dd>Since 3.1.0 <br>Set <tt>true</tt> to force the dialog to display even if the page is currently hidden.Setting this may cause the dialog to appear when the page is not yet accessible to the user.</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.0.1</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-shutdown"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>shutdown</b>(auto)
+						
+						</div>
+						<div class="description">
+							Shuts down the API<br><ul><li>Unregisters the phone</li><li>Unbinds all cwic events handlers</li><li>Clears all cwic data</li><li>Releases the Cisco Web Communicator add-on instance</li></ul>
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[ jQuery(window).unload(function() { <br>     // not necessary, it is already done in cwic.js by default     // jQuery('#phone').cwic('shutdown'); <br> }); <br>]]></script>
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[jQuery('#shutdown').click(function() { <br>     jQuery('#phone').cwic('shutdown'); <br> }); <br>]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<b>auto</b>
+										
+									</dt>
+									<dd></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-signOut"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>signOut</b>(args)
+						
+						</div>
+						<div class="description">
+							<br>Signs out a registered device from CUCM:<ul> <li>Ends any active call.</li><li>In softphone mode, SIP unregisters, in deskphone mode, closes the CTI connection.</li><li>Calls the optional complete callback</li></ul>If specified, the function is called only in the case where the phone was already registered. <br><b>Note:</b> This API is a preferred alternative to unregisterPhone API.<br><br>signOut examples: <br>
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[// *************************************// signOut devicejQuery('#phone')    .cwic('signOut', {        complete: function() {            console.log('device is signed out');        }});]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<b>args</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Is a set of key/value pairs to configure the phone signOut.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.complete</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Callback called when sign out is successfully completed.<br></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-startConversation"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>startConversation</b>(conversation)
+						
+						</div>
+						<div class="description">
+							Start a conversation with a participant.<br>If conversation contain both an ID and a state property, cwic assumes you want to answer that incoming conversation, in this case starting the passed conversation means accepting(answering) it.
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[// start an audio conversation with element #foo as containerjQuery('#phone').cwic('startConversation', {  participant: {    recipient: '1234'  },  container: '#foo'});// start an audio conversation with a contact (call work phone number)jQuery('#conversation').cwic('startConversation', {  participant: {    recipient: '1234',    displayName: 'Foo Bar',    screenName: ' fbar',    phoneNumbers: {      work: '1234',      mobile: '5678'    }  }});// answer an incoming conversation (input has an id property)// see another example about the conversationIncoming eventjQuery('#conversation').cwic('startConversation', {  participant: {    recipient: '1234'  },  id: '612',  state: 'Ringin'});// answer an incoming conversation with videojQuery('#conversation').cwic('startConversation',  jQuery.extend(conversation,{  videoDirection: (sendingVideo ? 'SendRecv':''),  remoteVideoWindow: 'remoteVideoWindow',  // pass id  id: callId}));// answer an incoming conversation with video object hosted in popoutwindowjQuery('#conversation').cwic('startConversation',  jQuery.extend(conversation,{  videoDirection: (sendingVideo ? 'SendRecv':''),  remoteVideoWindow: $('#remoteVideoWindow', popoutwindow.document)[0] // pass object setting jQuery context to popoutwindow document  window: popoutwindow,  id: callId}));// answer an incoming conversation without videojQuery('#callcontainer').cwic('startConversation', conversation);]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object|<a href="../symbols/call.html">call</a>}</span> <b>conversation</b>
+										
+									</dt>
+									<dd>Can be a new object to start a new conversation or an existing <a href="../symbols/call.html">call</a> which you wish to answer.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Number}</span> <b>conversation.id</b>
+										
+									</dt>
+									<dd>Unique identifier of the conversation.  Required when referencing an exising call.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{<a href="../symbols/participant.html">participant</a>}</span> <b>conversation.participant</b>
+										
+									</dt>
+									<dd>First remote participant of the call.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>conversation.participant.recipient</b>
+										
+									</dt>
+									<dd>The phone number of the participant.  Required when placing a new outbound call.  This will be the dialed number for the call.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>conversation.participant.name</b>
+										<i>Optional</i>
+									</dt>
+									<dd>The participant name.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>conversation.participant.photosrc</b>
+										<i>Optional</i>
+									</dt>
+									<dd>A suitable value for the src attribute of an &lt;img&gt; element.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>conversation.state</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Current state of the conversation. Can be OffHook, Ringing, Connected, OnHook, Reorder.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Date}</span> <b>conversation.start</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Start time. Defined on resolution update only.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Date}</span> <b>conversation.connect</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Media connection time. Defined on resolution update only.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>conversation.videoResolution</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Resolution of the video conversation, contains width and height properties. Defined on resolution update only.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object}</span> <b>conversation.container</b>
+										<i>Optional</i>
+									</dt>
+									<dd>The HTML element which contains the conversation. Conversation events are triggered on this element.If String, specifies a jQuery selector If Object, specifies a jQuery wrapper of matched elements(s).By default container is $(this), that is the first element of the matched set startConversation is called on.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>conversation.subject</b>
+										<i>Optional</i>
+									</dt>
+									<dd>The subject of the conversation to start.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>conversation.error(err)</b>
+										<i>Optional</i>
+									</dt>
+									<dd>A function to be called if the conversation cannot be started.  <a href="../symbols/%24.fn.cwic-errorMapEntry.html">$.fn.cwic-errorMapEntry</a> is passed as parameter.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>conversation.videoDirection</b>
+										<i>Optional</i>
+									</dt>
+									<dd>The video media direction: 'Inactive' or undefined (audio only by default), 'SendOnly', 'RecvOnly' or 'SendRecv'.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>conversation.remoteVideoWindow</b>
+										<i>Optional</i>
+									</dt>
+									<dd>The video object (must be of mime type application/x-cisco-cwc-videocall).</dd>
+								
+									<dt>
+										<span class="light fixedFont">{DOMWindow}</span> <b>conversation.window</b>
+										<i>Optional</i>
+									</dt>
+									<dd>DOM window that contains the remoteVideoWindow (default to this DOM window) required if specifying a video object on another window (popup/iframe).</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-startDiscovery"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>startDiscovery</b>(args)
+						
+						</div>
+						<div class="description">
+							Initiates service discovery based sign-in. Before using this API, following callbacks must be defined in init API:<ul><li>emailRequired</li><li>credentialsRequired</li><li>signedIn</li></ul>After successfull service discovery either SSO or credentials based authentication occurs depending on UCM configuration.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>args</b>
+										
+									</dt>
+									<dd>A map with:</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>args.mode</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Register the phone in this mode. Available modes are "SoftPhone" or "DeskPhone". Default of intelligent guess is applied after a device is selected.<br></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.devicesAvailable(devices, phoneMode, selectDeviceCb)</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Callback called after successful authentication. Might be called multiple times.If this callback is not specified, cwic applies the default device selection algorithm.  An array of <a href="../symbols/device.html">device</a> objects is passed so the application can select the device.<br>To complete the device registration, call the selectDeviceCb(phoneMode, deviceName, lineDN) function that is passed in to devicesAvailable as the third parameter. lineDN argument is optional and it is valid only in deskphone mode. It is ignored in softphone mode.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>args.forceRegistration</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Specifies whether to forcibly unregister other softphone instances with CUCM. Default is false. See GracefulRegistration doc for more info.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.success(registration)</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Callback called when registration succeeds. A <a href="../symbols/registration.html">registration</a> object is passed to the callback</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.error(errorMapEntry)</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Callback called if the registration fails.</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-switchPhoneMode"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>switchPhoneMode</b>(options)
+						
+						</div>
+						<div class="description">
+							Switch mode on a session that is already authorized. Can also be used for switching to different device in the same mode<br>
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[$('#phone').cwic('switchPhoneMode',{    success: function(registration) { console.log('Phone is in '+registration.mode+' mode'); },    error: function(err) { console.log('Error: '+error.message+' while switching mode'); },    mode: 'DeskPhone',    device: 'SEP01234567'});]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<b>options</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>options.progress</b>
+										<i>Optional</i>
+									</dt>
+									<dd>A handler called when the mode switch has passed pre-conditions.<br>If specified, the handler is called when the switchMode operation starts.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>options.success(registration)</b>
+										<i>Optional</i>
+									</dt>
+									<dd>A handler called when mode switch complete with registration as a parameter</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>options.error(err)</b>
+										<i>Optional</i>
+									</dt>
+									<dd>A handler called when the mode switch fails on pre-conditions.  <a href="../symbols/%24.fn.cwic-errorMapEntry.html">$.fn.cwic-errorMapEntry</a> is passed as parameter.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{string}</span> <b>options.mode</b>
+										<i>Optional</i>
+									</dt>
+									<dd>The new mode 'SoftPhone'/'DeskPhone'.  Defaults to SoftPhone.  If you want to change a property on a desk phone, such as the line, you must explicitly set this parameter to 'DeskPhone'.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{string}</span> <b>options.device</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Name of the device (e.g. SEP012345678, ECPUSER) to control. If not specified and switching from SoftPhone to DeskPhone mode, it defaults to picking first available. If not specified and switching from DeskPhone to SoftPhone mode, it defaults to output of predictDevice function (see <a href="../symbols/%24.fn.cwic-settings.html#.predictDevice">$.fn.cwic-settings.predictDevice</a>). If 'first available' is desired result in this case, output of custom predictDevice function should be empty string (''). If device name is invalid, it fallbacks to default device selection algorithm.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{string}</span> <b>options.line</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Phone number of a line valid for the specified device (e.g. '0000'). defaults to picking first available</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>options.forceRegistration</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Specifies whether to forcibly unregister other softphone instances with CUCM. Default is false. See GracefulRegistration doc for more info.</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-undock"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>undock</b>()
+						
+						</div>
+						<div class="description">
+							Undocks an external video window previously docked by <a href="../symbols/%24.fn.cwic.html#-dock">$.fn.cwic-dock</a><br>Example use:
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[$('#videocontainer').cwic('undock');// or:$(document).cwic('undock');// or:$().cwic('undock');]]></script>
+						
+						
+						
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.2</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-unregisterPhone"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>unregisterPhone</b>(args)
+						
+						</div>
+						<div class="description">
+							<br>Unregisters a phone from CUCM:<ul><li>Ends any active call if this is the last instance or forceLogout is set to true.</li><li>In softphone mode, SIP unregisters, in deskphone mode, closes the CTI connection.</li><li>Calls the optional complete handler (always called).</li></ul>
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[// *************************************// unregister phonejQuery('#phone')    .unbind('.cwic')             // optionally unbind cwic events (it's done in shutdown API automatically)    .cwic('unregisterPhone', {        forceLogout: true,           complete: function() {            console.log('phone is unregistered');        }});]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<b>args</b>
+										
+									</dt>
+									<dd>Is a set of key/value pairs to configure the phone unregistration.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>args.complete</b>
+										<i>Optional</i>
+									</dt>
+									<dd>Callback called when unregistration is successfully completed.<br>If specified, the handler is called only in the case where the phone was already registered.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>args.forceLogout:</b>
+										
+									</dt>
+									<dd>If true, end the phone session even if registered in other instances.unregisterPhone examples</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="-updateConversation"> </a>
+						<div class="fixedFont">&lt;inner&gt; 
+						
+						
+						<b>updateConversation</b>(update, id)
+						
+						</div>
+						<div class="description">
+							Updates an existing conversation.<br>This function controls the call allowing the following operations<ul><li>hold call</li><li>resume call</li><li>mute call</li><li>unmute call</li><li>mute audio only</li><li>mute video only</li><li>unmute audio only</li><li>unmute video only</li><li>add video window for remote sender</li><li>remove video window for remote sender</li><li>update video preference on a call video escalate/de-escalate</li><li>conference two calls together</li><li>transfer a call</li></ul>Transfer call flow:<ol><li>establish a conversation between clients A and B.</li><li>call "transferCall" API to transfer a conversation to the number of client C. A conversation between clients A and C is established.<li>Now, client A have an option to complete an ongoing call transfer. If the call transfer is completed, conversation between clients B and C is established and client A is put out from both conversations. To cancel call transfer, endConversation should be called.</li></ol>There are two ways to implement the final step of call transfer flow. The first one is to pass a "complete" button, either its id or jQuery object, to the "transferCall" API and library will automatically attach/detach handler and enable/disable the button when it's appropriate.If more specific behavior is desired comparing to this higher level API, then 'callTransferInProgress.cwic' event could be implemented, see <a href="../symbols/%24.fn.cwic.html#event:callTransferInProgress">$.fn.cwic#event:callTransferInProgress</a>
+							
+							
+						</div>
+						
+						
+						
+	<script type="syntaxhighlighter" class="brush: js"><![CDATA[// typeof input is string HOLD/RESUMEjQuery('#phone').cwic('updateConversation', 'hold', '1234')jQuery('body').cwic('updateConversation', 'hold', conversation.id);jQuery('#myid').cwic('updateConversation', 'hold', conversation);  // typeof input is objectjQuery('#conversation').cwic('updateConversation', 'hold');  // resume the same conversation,  // let cwic find the conversation data attached to #conversationjQuery('#conversation').cwic('updateConversation', 'resume');  // MUTE/UNMUTE  // typeof input is stringjQuery('#phone').cwic('updateConversation', 'mute', '1234');jQuery('body').cwic('updateConversation', 'mute', conversation.id);jQuery('#myid').cwic('updateConversation', 'mute', conversation);  // typeof input is object <br>jQuery('#conversation').cwic('updateConversation', 'mute');  // unmute the same conversation,  // let cwic find the conversation data attached to #conversationjQuery('#conversation').cwic('updateConversation', 'unmute'); // add/remove video object in this (default) DOMWindowjQuery('#conversation').cwic('updateConversation',              { 'addRemoteVideoWindow':videoObject });jQuery('#conversation').cwic('updateConversation',              { 'removeRemoteVideoWindow':videoObject });// add/remove video object from another DOMWindowjQuery('#conversation').cwic('updateConversation',              { 'addRemoteVideoWindow':videoObject, window:popupWindow });jQuery('#conversation').cwic('updateConversation',              { 'removeRemoteVideoWindow':videoObject, window:popupWindow });// Escalate to videojQuery('#conversation').cwic('updateConversation', {'videoDirection': 'SendRecv'}); // implied source call is call associated with conversation divjQuery('#phone').cwic('updateConversation', {'videoDirection': 'SendRecv'}, conversation.id}); // source call id passedjQuery('#phone').cwic('updateConversation', {'videoDirection': 'SendRecv'}, conversation}); // source call passed// De-escalate from videojQuery('#conversation').cwic('updateConversation', {'videoDirection': 'Inactive'}); // implied source call is call associated with conversation divjQuery('#phone').cwic('updateConversation', {'videoDirection': 'Inactive'}, conversation.id}); // source call id passedjQuery('#phone').cwic('updateConversation', {'videoDirection': 'Inactive'}, conversation}); // source call passed// Transfer call to target numberjQuery('#conversation').cwic('updateConversation', {'transferCall': number, completeButton: 'completebtn'}); // implied source call is call associated with conversation divjQuery('#phone').cwic('updateConversation', {'transferCall': number}, conversation.id}); // source call id passed. Bind to {@link $.fn.cwic#event:callTransferInProgress} to handle transfer completejQuery('#phone').cwic('updateConversation', {'transferCall': number}, conversation}); // source call passed// Join target callId to source calljQuery('#conversation').cwic('updateConversation', {'joinCall':callId}); // implied source call is call associated with conversation divjQuery('#phone').cwic('updateConversation', {'joinCall':callId}, conversation.id}); // source call id passedjQuery('#phone').cwic('updateConversation', {'joinCall':callId}, conversation}); // source call passed]]></script>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object}</span> <b>update</b>
+										
+									</dt>
+									<dd>Update a started conversation. update can be: <br>A String: hold, resume, mute, unmute, muteAudio, muteVideo, unmuteAudio, unmuteVideo.<br>An Object: contains one or more writable conversation properties to update e.g. videoDirection.<br>Triggers a conversationUpdate event.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String|Object}</span> <b>id</b>
+										
+									</dt>
+									<dd>A conversation identifier (String) or Object containing an id property <br></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						
+					
+				</div>
+				
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+				
+				<div class="method_section">
+					<div class="sectionTitle">
+						Event Detail
+					</div>
+					
+						<a name="event:callTransferInProgress"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>callTransferInProgress</b>(event)
+						
+						</div>
+						<div class="description">
+							A call transfer is in progress. It signals that an ongoing call transfer can be completed or canceled.The application should implement this event to attach "completeTransfer" handler, if the higher level API does not fit specific needs. <b>Important note:</b> This event could be triggered multiple times for one call transfer. (be careful not to create memory leaks with event handlers)
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>event.completeTransfer</b>
+										
+									</dt>
+									<dd>Function to be called to complete ongoing call transfer</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:conversationEnd"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>conversationEnd</b>(event, conversation)
+						
+						</div>
+						<div class="description">
+							A conversation has ended.  The conversation was terminated by the local user, all participants left the conversation, or an error occurred (media failure for example).
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{<a href="../symbols/call.html">call</a>}</span> <b>conversation</b>
+										
+									</dt>
+									<dd></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:conversationIncoming"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>conversationIncoming</b>(event, conversation, container)
+						
+						</div>
+						<div class="description">
+							A new conversation is being received, but has not yet started.  The newly created conversation container is passed as an extra event data.<br>The application is responsible for attaching the container to the DOM and for managing the container lifetime.<br>In the case the new conversation is accepted by calling startConversation, a conversationStart event is triggered afterwards.<br>
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{<a href="../symbols/call.html">call</a>}</span> <b>conversation</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{jQueryNodeArray}</span> <b>container</b>
+										
+									</dt>
+									<dd></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:conversationStart"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>conversationStart</b>(event, conversation, container)
+						
+						</div>
+						<div class="description">
+							A conversation has just started. Note the conversation may not be connected yet, for example it is in the Alerting state.The conversation container is passed as an extra event data.
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{<a href="../symbols/call.html">call</a>}</span> <b>conversation</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{DomNode}</span> <b>container</b>
+										
+									</dt>
+									<dd></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:conversationUpdate"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>conversationUpdate</b>(event, conversation, container)
+						
+						</div>
+						<div class="description">
+							One or more properties of a conversation have changed, such as state or participants.
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{<a href="../symbols/call.html">call</a>}</span> <b>conversation</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{jQueryNodeArray}</span> <b>container</b>
+										
+									</dt>
+									<dd></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:error"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>error</b>(event)
+						
+						</div>
+						<div class="description">
+							
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object|<a href="../symbols/%24.fn.cwic-errorMapEntry.html">$.fn.cwic-errorMapEntry</a>}</span> <b>event</b>
+										
+									</dt>
+									<dd>An arbitrary error event or pre-defined cwic error object.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event.code</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.message</b>
+										<i>Optional</i>
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{String[]}</span> <b>event.details</b>
+										<i>Optional</i>
+									</dt>
+									<dd>An array of additional information.</dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:externalWindowEvent"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>externalWindowEvent</b>(event)
+						
+						</div>
+						<div class="description">
+							A property has changed on the external video window created by <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a> or <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event.externalWindowState</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Number}</span> <b>event.externalWindowState.callId</b>
+										
+									</dt>
+									<dd>The <a href="../symbols/call.html#callId">call#callId</a> of a call associated with the external video window. -1 if no call is associated. See also <a href="../symbols/%24.fn.cwic.html#-showCallInExternalWindow">$.fn.cwic-showCallInExternalWindow</a>.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>event.externalWindowState.showing</b>
+										
+									</dt>
+									<dd>When <tt>true</tt>, the external video window is displayed, possibly minimized or behind other windows. See also <a href="../symbols/%24.fn.cwic.html#-hideExternalWindow">$.fn.cwic-hideExternalWindow</a>.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>event.externalWindowState.selfViewPip</b>
+										
+									</dt>
+									<dd>When <tt>true</tt>, the external video window will display a picture-in-picture preview (self-view). Note the picture-in-picture preview will not be visible if preview is also in the full window.  See also <a href="../symbols/%24.fn.cwic.html#-setExternalWindowShowSelfViewPip">$.fn.cwic-setExternalWindowShowSelfViewPip</a>.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>event.externalWindowState.alwaysOnTop</b>
+										
+									</dt>
+									<dd>When <tt>true</tt>, the external video window will be set to always display on top of other windows. See also <a href="../symbols/%24.fn.cwic.html#-setExternalWindowAlwaysOnTop">$.fn.cwic-setExternalWindowAlwaysOnTop</a>.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>event.externalWindowState.preview</b>
+										
+									</dt>
+									<dd>When <tt>true</tt>, the external video window is showing preview (self-view) in the full window. See also <a href="../symbols/%24.fn.cwic.html#-showPreviewInExternalWindow">$.fn.cwic-showPreviewInExternalWindow</a>.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>event.externalWindowState.docking</b>
+										
+									</dt>
+									<dd>When <tt>true</tt>, the external video window will be in docked state. See also <a href="../symbols/%24.fn.cwic.html#-dock">$.fn.cwic-dock</a>.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.externalWindowState.title</b>
+										
+									</dt>
+									<dd>The text used for the external video window's title bar. See also <a href="../symbols/%24.fn.cwic.html#-setExternalWindowTitle">$.fn.cwic-setExternalWindowTitle</a></dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.1.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:invalidCertificate"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>invalidCertificate</b>(event)
+						
+						</div>
+						<div class="description">
+							An invalid certificate detected.
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Function}</span> <b>event.respond(fingerprint,accept)</b>
+										
+									</dt>
+									<dd>Function to be called to reject or accept advertised invalid certificate.</dd>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event.info</b>
+										
+									</dt>
+									<dd>Additional info about advertised invalid certificate</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.info.certFingerprint</b>
+										
+									</dt>
+									<dd>Certificate fingerprint</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.info.certSubjectCN</b>
+										
+									</dt>
+									<dd>Certificate Subject Common Name</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.info.referenceId</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Array}</span> <b>event.info.invalidReasons</b>
+										
+									</dt>
+									<dd>Array of invalid reasons</dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.info.subjectCertificateData</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.info.intermediateCACertificateData</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>event.info.allowUserToAccept</b>
+										
+									</dt>
+									<dd>If true, certificate can be accepted with repond function</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:mmDeviceChange"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>mmDeviceChange</b>(event)
+						
+						</div>
+						<div class="description">
+							A change to the list of local multimedia devices has occurred.The application should use <a href="../symbols/%24.fn.cwic.html#-getMultimediaDevices">$.fn.cwic-getMultimediaDevices</a> to acquire the updated list of devices.
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>3.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:multimediaCapabilities"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>multimediaCapabilities</b>(event)
+						
+						</div>
+						<div class="description">
+							Signals weather the multimedia capability is enabled or not. Multimedia services are enabled only in authenticated state.
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>event.multimediaCapability</b>
+										
+									</dt>
+									<dd></dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:ringtoneChange"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>ringtoneChange</b>(event)
+						
+						</div>
+						<div class="description">
+							Ringtone changed
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.ringtone</b>
+										
+									</dt>
+									<dd>New ringtone name</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:ringtonesListAvailable"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>ringtonesListAvailable</b>(event)
+						
+						</div>
+						<div class="description">
+							List of ringtones is available
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Array}</span> <b>event.ringtones</b>
+										
+									</dt>
+									<dd>List of available ringtones</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:ssoNavigateTo"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>ssoNavigateTo</b>(event)
+						
+						</div>
+						<div class="description">
+							Signals when authentication with Identity Provider is required during the SSO process.
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.url</b>
+										
+									</dt>
+									<dd>URL to navigate to from popup/iFrame to continue with SSO process.</dd>
+								
+								</dl>
+							
+							
+							
+								<dl class="detailList">
+								<dt class="heading">Since:</dt>
+									<dd>4.0.0</dd>
+								</dl>
+								</dl>
+							
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="event:system"> </a>
+						<div class="fixedFont">
+						
+						
+						<b>system</b>(event)
+						
+						</div>
+						<div class="description">
+							Called when the phone changes state.
+							
+								<br />
+								<i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+							
+							
+						</div>
+						
+						
+						
+							
+								<dl class="detailList">
+								<dt class="heading">Parameters:</dt>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Object}</span> <b>event.phone</b>
+										
+									</dt>
+									<dd></dd>
+								
+									<dt>
+										<span class="light fixedFont">{String}</span> <b>event.phone.status</b>
+										
+									</dt>
+									<dd>One of <ul><li>"eConnectionTerminated"</li><li>"eIdle"</li><li>"eRegistering"</li><li>"eReady"</li></ul></dd>
+								
+									<dt>
+										<span class="light fixedFont">{Boolean}</span> <b>event.phone.ready</b>
+										
+									</dt>
+									<dd><tt>true</tt> if phone is ready (status "eReady"), <tt>false</tt> if it is logged out or in the process of registering or recovering</dd>
+								
+									<dt>
+										<span class="light fixedFont">{<a href="../symbols/registration.html">registration</a>}</span> <b>event.phone.registration</b>
+										
+									</dt>
+									<dd>An updated copy of the registration object passed to <a href="../symbols/%24.fn.cwic.html#-registerPhone">$.fn.cwic-registerPhone</a></dd>
+								
+								</dl>
+							
+							
+							
+							
+							
+							
+							
+
+						
+					
+				
+			</div>
+
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Fri Jan 15 2016 13:44:46 GMT+0000 (GMT)
+		</div>
+    <script src="../javascript/shCore.js"></script>
+    <script src="../javascript/shBrushJScript.js"></script>
+    <script type="text/javascript">
+         SyntaxHighlighter.all()
+    </script>
+	</div>
+	</body>
+</html>

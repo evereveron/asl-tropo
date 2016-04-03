@@ -1,15 +1,26 @@
 {
-  "name": "tropo-webapi",
-  "description": "A Node.js library for the Tropo WebAPI.",
-  "version": "1.0.17",
-  "homepage": "http://tropo.com",
-  "author": "Mark Headd <mheadd@voxeo.com> (http://tropo.com)",
-  "main": "./lib/tropo-webapi",
-  "directories" : { "lib" : "./lib", "samples": "./samples", "tests": "./tests" },
-  "repositories" : [
-    { "type":"git", "url":"https://github.com/tropo/tropo-webapi-node" }
-  ],
-  "engines": {
-    "node": "> 0.6.0"
+  "name": "ASLTranslator",
+  "version": "1.0.0",
+  "description": "translate asl to various languages",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evereveron/asl-tropo"
+  },
+  "author": "Jasmine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evereveron/asl-tropo/issues"
+  },
+  "homepage": "https://github.com/evereveron/asl-tropo#readme",
+  "dependencies": {
+    "content-disposition": "^0.5.1",
+    "csco-spark": "^3.2.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "tropo-webapi": "^1.2.0"
   }
 }

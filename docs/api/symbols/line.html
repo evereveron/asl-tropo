@@ -1,0 +1,1062 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf8" />
+		<meta name="generator" content="JsDoc Toolkit" />
+		
+		<title>JsDoc Reference - line</title>
+
+		<style type="text/css">
+			@charset "UTF-8";
+
+
+/* RESET STYLES */
+
+html,body,div,h1,h2,h3,h4,h5,h6,p,img,
+dl,dt,dd,ol,ul,li,table,caption,tbody,
+tfoot,thead,tr,th,td,form,fieldset,
+embed,object,applet {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BASICS */
+
+html, body {
+  /* overflow:hidden; /* keeps scrollbar off IE */
+  background-color:#fff;
+}
+
+body {
+  font-family:arial,sans-serif;
+  color:#000;
+  font-size:13px;
+  color:#333;
+}
+
+a, a code {
+  color:#006699;
+}
+
+a:active,
+a:active code {
+  color:#f00;
+} 
+
+a:visited,
+a:visited code {
+  color:#006699;
+}
+
+input, select,
+textarea, option, label {
+  font-family:inherit;
+  font-size:inherit;
+  padding:0;
+  margin:0;
+  vertical-align:middle;
+}
+
+option {
+  padding:0 4px;
+}
+
+p {
+  padding:0;
+  margin:0 0 1em;
+}
+
+code, pre {
+  color:#007000;
+  font-family:monospace;
+  line-height:1em;
+}
+
+var {
+  color:#007000;
+  font-style:italic;
+}
+
+pre {
+  border:1px solid #ccc;
+  background-color:#fafafa;
+  padding:10px;
+  margin:0 0 1em 1em;
+  overflow:auto;
+  line-height:inherit; /* fixes vertical scrolling in webkit */
+}
+
+h1,h2,h3,h4,h5 {
+  margin:1em 0;
+  padding:0;
+}
+
+p,ul,ol,dl,dd,dt,li {
+  line-height:1.3em;
+}
+
+ul,ol {
+  margin:0 0 .8em;
+  padding:0 0 0 2em;
+}
+
+li {
+  padding:0 0 .5em;
+}
+
+dl {
+  margin:0 0 1em 0;
+  padding:0;
+}
+
+dt {
+  margin:0;
+  padding:0;
+}
+
+dd {
+  margin:0 0 1em;
+  padding:0 0 0 2em;
+}
+
+li p {
+  margin:.5em 0 0;
+}
+
+dd p {
+  margin:1em 0 0;
+}
+
+li pre, li table, li img {
+  margin:.5em 0 0 1em;
+}
+
+dd pre,
+#jd-content dd table,
+#jd-content dd img {
+  margin:1em 0 0 1em;
+}
+
+li ul,
+li ol,
+dd ul,
+dd ol {
+  margin:0;
+  padding: 0 0 0 1em;
+}
+
+li li,
+dd li {
+  margin:0;
+  padding:.5em 0 0;
+}
+
+dl dl,
+ol dl,
+ul dl {
+  margin:0 0 1em;
+  padding:0;
+}
+
+table {
+  font-size:1em;
+  margin:0 0 1em;
+  padding:0;
+  border-collapse:collapse;
+  border-width:0;
+  empty-cells:show;
+}
+
+td,th {
+  border:1px solid #ccc;
+  padding:6px 12px;
+  text-align:left;
+  vertical-align:top;
+  background-color:inherit;
+}
+
+th {
+  background-color:#dee8f1;
+}
+
+td > p:last-child {
+  margin:0;
+}
+
+hr.blue {
+  background-color:#DDF0F2;
+  border:none;
+  height:5px;
+  margin:20px 0 10px;
+}
+
+blockquote {
+  margin: 0 0 1em 1em;
+  padding: 0 4em 0 1em;
+  border-left:2px solid #eee;
+}
+
+ul.navContainerOuter li a {
+font-weight:bold;
+}
+
+
+			/* default.css */
+
+#doc_wrapper {
+margin-left:auto;
+margin-right:auto;
+width:1200px;
+}
+
+#header {
+height:80px;
+position:relative;
+z-index:100;
+min-width:675px; /* min width for the tabs, before they wrap */
+padding:0 10px;
+border-bottom:3px solid #2970A6;
+}
+
+#headerLeft {
+position:absolute;
+padding:10px 0 0;
+left:8px;
+bottom:3px;
+/* width:600px; */
+}
+
+#headerRight {
+position:absolute;
+right:0;
+bottom:3px;
+padding:0;
+text-align:right;
+}
+
+#masthead-title {
+font-size:28px;
+color:#2f74ae;
+}
+
+#index {
+position:fixed;
+width:220px;
+top:90px;
+}
+
+ul.navContainerOuter {
+list-style:none;
+margin:0;
+padding:0;
+}
+
+#content {
+margin-left:260px;
+}
+
+.method_section {
+border:1px solid #ccc;
+border-radius:5px;
+-moz-border-radius:5px;
+padding:10px;
+margin-top:20px;
+}
+
+/*.method_section_heading {
+border:1px solid #ccc;
+border-radius:5px;
+-moz-border-radius:5px;
+color:#000000;
+background-color:#dee8f1;
+padding:10px;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+.type_title2{
+display:inline-block;
+border-radius:5px;
+-moz-border-radius:5px;
+background-color:#FFCC66;
+padding:6px 12px;
+font-weight:bold;
+}
+
+.type_text_wrap, .attributes {
+margin-left:10px;
+padding-top:5px;
+padding-bottom:5px;
+margin-bottom:20px;
+width:780px;
+}
+
+.attributes {
+color:#777;
+font-style:italic;
+}*/
+
+.summaryTable {
+border-collapse:collapse;
+width:100%;
+margin:0;
+}
+
+.summaryTable thead {
+display:none;
+}
+
+.summaryTable td {
+vertical-align:top;
+padding:8px;
+font-size:13px;
+line-height:15px;
+text-align:left;
+}
+
+.summaryTable td.attributes {
+width:150px;
+font-style:italic;
+color:#777;
+}
+
+div.fixedFont {
+margin-bottom:8px;
+color:#333;
+}
+
+div.fixedFont a {
+margin-right:8px;
+}
+
+div.description {
+color:#525252;
+}
+
+div.description h3 {
+display:block;
+width:150px;
+border-radius:5px;
+-moz-border-radius:5px;
+background-color:#FFCC66;
+padding:6px 12px;
+font-weight:bold;
+}
+
+hr {
+border:none;
+border-top:1px solid #ccc;
+height:1px;
+}
+
+caption, div.sectionTitle {
+border:1px solid #ccc;
+border-radius:5px;
+-moz-border-radius:5px;
+color:#000000;
+background-color:#dee8f1;
+padding:10px;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+pre.code {
+display:block;
+margin:5px 0;
+padding:8px;
+border:1px solid #ccc;
+}
+
+/*ul.inheritsList {
+list-style:square;
+margin-left:20px;
+padding-left:0;
+}*/
+
+.detailList {
+margin-left:0; 
+line-height:15px;
+}
+
+.detailList dt, .detailList dd {
+margin-left:0;
+padding-left:0;
+}
+
+.detailList .heading {
+font-weight:bold;
+padding-bottom:6px;
+margin-left:0;
+}
+
+.light, .light a:link, .light a:visited {
+color:#777;
+font-style:italic;
+}
+
+.fineprint {
+text-align:right;
+font-size:10px;
+}
+.syntaxhighlighter .toolbar {
+display:none !important;
+}
+
+			/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+  -moz-border-radius: 0 0 0 0 !important;
+  -webkit-border-radius: 0 0 0 0 !important;
+  background: none !important;
+  border: 0 !important;
+  bottom: auto !important;
+  float: none !important;
+  height: auto !important;
+  left: auto !important;
+  line-height: 1.1em !important;
+  margin: 0 !important;
+  outline: 0 !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  position: static !important;
+  right: auto !important;
+  text-align: left !important;
+  top: auto !important;
+  vertical-align: baseline !important;
+  width: auto !important;
+  box-sizing: content-box !important;
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+  font-weight: normal !important;
+  font-style: normal !important;
+  font-size: 1em !important;
+  min-height: inherit !important;
+  min-height: auto !important;
+}
+
+.syntaxhighlighter {
+  width: 100% !important;
+  margin: 1em 0 1em 0 !important;
+  position: relative !important;
+  overflow: auto !important;
+  font-size: 1em !important;
+}
+.syntaxhighlighter.source {
+  overflow: hidden !important;
+}
+.syntaxhighlighter .bold {
+  font-weight: bold !important;
+}
+.syntaxhighlighter .italic {
+  font-style: italic !important;
+}
+.syntaxhighlighter .line {
+  white-space: pre !important;
+}
+.syntaxhighlighter table {
+  width: 100% !important;
+}
+.syntaxhighlighter table caption {
+  text-align: left !important;
+  padding: .5em 0 0.5em 1em !important;
+}
+.syntaxhighlighter table td.code {
+  width: 100% !important;
+}
+.syntaxhighlighter table td.code .container {
+  position: relative !important;
+}
+.syntaxhighlighter table td.code .container textarea {
+  box-sizing: border-box !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  background: white !important;
+  padding-left: 1em !important;
+  overflow: hidden !important;
+  white-space: pre !important;
+}
+.syntaxhighlighter table td.gutter .line {
+  text-align: right !important;
+  padding: 0 0.5em 0 1em !important;
+}
+.syntaxhighlighter table td.code .line {
+  padding: 0 1em !important;
+}
+.syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
+  padding-left: 0em !important;
+}
+.syntaxhighlighter.show {
+  display: block !important;
+}
+.syntaxhighlighter.collapsed table {
+  display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  padding: 0.1em 0.8em 0em 0.8em !important;
+  font-size: 1em !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+}
+.syntaxhighlighter.collapsed .toolbar span {
+  display: inline !important;
+  margin-right: 1em !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a {
+  padding: 0 !important;
+  display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a.expandSource {
+  display: inline !important;
+}
+.syntaxhighlighter .toolbar {
+  position: absolute !important;
+  right: 1px !important;
+  top: 1px !important;
+  width: 11px !important;
+  height: 11px !important;
+  font-size: 10px !important;
+  z-index: 10 !important;
+}
+.syntaxhighlighter .toolbar span.title {
+  display: inline !important;
+}
+.syntaxhighlighter .toolbar a {
+  display: block !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  padding-top: 1px !important;
+}
+.syntaxhighlighter .toolbar a.expandSource {
+  display: none !important;
+}
+.syntaxhighlighter.ie {
+  font-size: .9em !important;
+  padding: 1px 0 1px 0 !important;
+}
+.syntaxhighlighter.ie .toolbar {
+  line-height: 8px !important;
+}
+.syntaxhighlighter.ie .toolbar a {
+  padding-top: 0px !important;
+}
+.syntaxhighlighter.printing .line.alt1 .content,
+.syntaxhighlighter.printing .line.alt2 .content,
+.syntaxhighlighter.printing .line.highlighted .number,
+.syntaxhighlighter.printing .line.highlighted.alt1 .content,
+.syntaxhighlighter.printing .line.highlighted.alt2 .content {
+  background: none !important;
+}
+.syntaxhighlighter.printing .line .number {
+  color: #bbbbbb !important;
+}
+.syntaxhighlighter.printing .line .content {
+  color: black !important;
+}
+.syntaxhighlighter.printing .toolbar {
+  display: none !important;
+}
+.syntaxhighlighter.printing a {
+  text-decoration: none !important;
+}
+.syntaxhighlighter.printing .plain, .syntaxhighlighter.printing .plain a {
+  color: black !important;
+}
+.syntaxhighlighter.printing .comments, .syntaxhighlighter.printing .comments a {
+  color: #008200 !important;
+}
+.syntaxhighlighter.printing .string, .syntaxhighlighter.printing .string a {
+  color: blue !important;
+}
+.syntaxhighlighter.printing .keyword {
+  color: #006699 !important;
+  font-weight: bold !important;
+}
+.syntaxhighlighter.printing .preprocessor {
+  color: gray !important;
+}
+.syntaxhighlighter.printing .variable {
+  color: #aa7700 !important;
+}
+.syntaxhighlighter.printing .value {
+  color: #009900 !important;
+}
+.syntaxhighlighter.printing .functions {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .constants {
+  color: #0066cc !important;
+}
+.syntaxhighlighter.printing .script {
+  font-weight: bold !important;
+}
+.syntaxhighlighter.printing .color1, .syntaxhighlighter.printing .color1 a {
+  color: gray !important;
+}
+.syntaxhighlighter.printing .color2, .syntaxhighlighter.printing .color2 a {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .color3, .syntaxhighlighter.printing .color3 a {
+  color: red !important;
+}
+.syntaxhighlighter.printing .break, .syntaxhighlighter.printing .break a {
+  color: black !important;
+}
+
+			/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ * 
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.alt1 {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.alt2 {
+  background-color: white !important;
+}
+.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
+  background-color: #e0e0e0 !important;
+}
+.syntaxhighlighter .line.highlighted.number {
+  color: black !important;
+}
+.syntaxhighlighter table caption {
+  color: black !important;
+}
+.syntaxhighlighter .gutter {
+  color: #afafaf !important;
+}
+.syntaxhighlighter .gutter .line {
+  border-right: 3px solid #6ce26c !important;
+}
+.syntaxhighlighter .gutter .line.highlighted {
+  background-color: #6ce26c !important;
+  color: white !important;
+}
+.syntaxhighlighter.printing .line .content {
+  border: none !important;
+}
+.syntaxhighlighter.collapsed {
+  overflow: visible !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+  color: blue !important;
+  background: white !important;
+  border: 1px solid #6ce26c !important;
+}
+.syntaxhighlighter.collapsed .toolbar a {
+  color: blue !important;
+}
+.syntaxhighlighter.collapsed .toolbar a:hover {
+  color: red !important;
+}
+.syntaxhighlighter .toolbar {
+  color: white !important;
+  background: #6ce26c !important;
+  border: none !important;
+}
+.syntaxhighlighter .toolbar a {
+  color: white !important;
+}
+.syntaxhighlighter .toolbar a:hover {
+  color: black !important;
+}
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a {
+  color: black !important;
+}
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+  color: #008200 !important;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a {
+  color: blue !important;
+}
+.syntaxhighlighter .keyword {
+  color: #006699 !important;
+}
+.syntaxhighlighter .preprocessor {
+  color: gray !important;
+}
+.syntaxhighlighter .variable {
+  color: #aa7700 !important;
+}
+.syntaxhighlighter .value {
+  color: #009900 !important;
+}
+.syntaxhighlighter .functions {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter .constants {
+  color: #0066cc !important;
+}
+.syntaxhighlighter .script {
+  font-weight: bold !important;
+  color: #006699 !important;
+  background-color: none !important;
+}
+.syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
+  color: gray !important;
+}
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
+  color: #ff1493 !important;
+}
+.syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
+  color: red !important;
+}
+
+.syntaxhighlighter .keyword {
+  font-weight: bold !important;
+}
+
+		</style>
+	</head>
+
+	<body>
+		<div id="doc_wrapper">
+<!-- ============================== header ================================= -->	
+		<!-- begin static/header.html -->
+		<div id="header">
+	<div id="headerLeft">
+		<div>
+			<div style="float: left; width: 20%;">
+				<a href="https://www.cisco.com" target="_blank"><img src="images/ciscologo_grey.jpg" alt="Cisco" /></a>
+			</div>
+			<div style="float: right; width: 80%;">
+				<h2 style="display:inline;">API Reference for Jabber SDK</h2><br>
+				<h4 style="display:inline;white-space:nowrap;">Cisco Unified Communications System Release 11.0 Maintenance Release 1</h2><br>
+				<h4 style="display:inline;white-space:nowrap;">Voice and Video Version 11.0.1 for Web</h4><br>
+			</div>
+		</div>
+		<div style="clear:both"></div> 			
+	</div>
+	
+	<div id="headerRight">
+		<div id="header_links" >
+			<a target="_blank" href="http://developer.cisco.com/web/jabber-developer">Jabber Developer Site</a><br>
+			<h5 style="display:inline;">Last Updated Fri Jan 15 2016</h5>
+		</div>			  			  
+	</div>
+</div>
+		<!-- end static/header.html -->
+<!-- ============================== classes index ============================ -->
+		<div id="index">
+			<!-- begin publish.classesIndex -->
+			<div align="center"><a href="../index.html">Class Index</a>
+| <a href="../files.html">File Index</a></div>
+<hr />
+<h2>Classes</h2>
+<ul class="navContainerOuter">
+	
+	<li><a href="../symbols/%24.fn.cwic.html">$.fn.cwic</a></li>
+	
+	<li><a href="../symbols/%24.fn.cwic-errorMap.html">$.fn.cwic-errorMap</a></li>
+	
+	<li><a href="../symbols/%24.fn.cwic-errorMapEntry.html">$.fn.cwic-errorMapEntry</a></li>
+	
+	<li><a href="../symbols/%24.fn.cwic-settings.html">$.fn.cwic-settings</a></li>
+	
+	<li><i><a href="../symbols/_global_.html">_global_</a></i></li>
+	
+	<li><a href="../symbols/aboutObject.html">aboutObject</a></li>
+	
+	<li><a href="../symbols/call.html">call</a></li>
+	
+	<li><a href="../symbols/device.html">device</a></li>
+	
+	<li><a href="../symbols/line.html">line</a></li>
+	
+	<li><a href="../symbols/participant.html">participant</a></li>
+	
+	<li><a href="../symbols/registration.html">registration</a></li>
+	
+	<li><a href="../symbols/window.html">window</a></li>
+	
+</ul>
+<p style="color:#000; font-size:10px; margin-top:20px;">
+	Any elements of the API not documented in the API reference are considered experimental and unsupported.<br />
+	These may be removed in a future release.<br /><br />
+	Copyright (c) 2007-2015 by Cisco Systems, Inc.
+</p>
+			<!-- end publish.classesIndex -->
+		</div>
+		
+		<div id="content">
+<!-- ============================== class title ============================ -->
+			<h1>
+				
+				Namespace line
+			</h1>
+
+<!-- ============================== class summary ========================== -->			
+			<p>
+				
+				
+			
+				
+				
+				
+					<br /><i>Defined in: </i> <a href="../symbols/src/src_www_src_cwic_supplementaldocs.js.html">supplementaldocs.js</a>.
+				
+			</p>
+
+<!-- ============================== constructor summary ==================== -->			
+			
+			
+			<div class="method_section">
+				<table class="summaryTable" cellspacing="0" summary="A summary of the constructor documented in the class line.">
+					<caption>Namespace Summary</caption>
+					<thead>
+						<tr>
+							<th scope="col">Constructor Attributes</th>
+							<th scope="col">Constructor Name and Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="attributes">&nbsp;</td>
+							<td class="nameDescription" >
+								<div class="fixedFont">
+									<b><a href="../symbols/line.html#constructor">line</a></b>
+								</div>
+								<div class="description"></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			
+
+<!-- ============================== properties summary ===================== -->
+			
+				
+				
+				
+				<div class="method_section">
+					<table class="summaryTable" cellspacing="0" summary="A summary of the fields documented in the class line.">
+						<caption>Field Summary</caption>
+						<thead>
+							<tr>
+								<th scope="col">Field Attributes</th>
+								<th scope="col">Field Name and Description</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">
+									<b><a href="../symbols/line.html#directoryNumber">directoryNumber</a></b>
+									</div>
+									<div class="description">DN of the line as represented in the directory</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">
+									<b><a href="../symbols/line.html#exists">exists</a></b>
+									</div>
+									<div class="description"><tt>true</tt> if the line exists</div>
+								</td>
+							</tr>
+						
+							<tr>
+								<td class="attributes">&nbsp;</td>
+								<td class="nameDescription">
+									<div class="fixedFont">
+									<b><a href="../symbols/line.html#name">name</a></b>
+									</div>
+									<div class="description"></div>
+								</td>
+							</tr>
+						
+						</tbody>
+					</table>
+				</div
+				
+				
+				
+			
+
+<!-- ============================== methods summary ======================== -->
+			
+<!-- ============================== events summary ======================== -->
+			
+
+<!-- ============================== constructor details ==================== -->		
+			
+			
+			<div class="method_section">
+				<a name="constructor"> </a>
+				<div class="sectionTitle">
+					Namespace Detail
+				</div>
+				
+				<div class="fixedFont">
+						<b>line</b>
+				</div>
+				
+				<div class="description">
+					
+					
+				</div>
+				
+				
+				
+				
+					
+					
+					
+					
+					
+					
+					
+
+			</div>
+			
+
+<!-- ============================== field details ========================== -->		
+			
+				
+				<div class="method_section">
+					<div class="sectionTitle">
+						Field Detail
+					</div>
+					
+						<a name="directoryNumber"> </a>
+						<div class="fixedFont">
+						
+						<span class="light">{String}</span>
+						<b>directoryNumber</b>
+						
+						</div>
+						<div class="description">
+							DN of the line as represented in the directory
+							
+							
+						</div>
+						
+						
+
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="exists"> </a>
+						<div class="fixedFont">
+						
+						<span class="light">{Boolean}</span>
+						<b>exists</b>
+						
+						</div>
+						<div class="description">
+							<tt>true</tt> if the line exists
+							
+							
+						</div>
+						
+						
+
+							
+							
+							
+							
+
+						<hr />
+					
+						<a name="name"> </a>
+						<div class="fixedFont">
+						
+						<span class="light">{String}</span>
+						<b>name</b>
+						
+						</div>
+						<div class="description">
+							
+							
+							
+						</div>
+						
+						
+
+							
+							
+							
+							
+
+						
+					
+				</div>
+				
+			
+
+<!-- ============================== method details ========================= -->		
+			
+			
+<!-- ============================== event details ========================= -->		
+			
+			</div>
+
+		</div>
+
+		
+<!-- ============================== footer ================================= -->
+		<div class="fineprint" style="clear:both">
+			
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Fri Jan 15 2016 13:44:46 GMT+0000 (GMT)
+		</div>
+    <script src="../javascript/shCore.js"></script>
+    <script src="../javascript/shBrushJScript.js"></script>
+    <script type="text/javascript">
+         SyntaxHighlighter.all()
+    </script>
+	</div>
+	</body>
+</html>
