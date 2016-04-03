@@ -3,7 +3,7 @@ var $ = jQuery = require('jQuery');
 
 var app = express();
 app.set('view engine', 'ejs');
-app.set('port', (process.env.PORT || 8080));
+app.set('port', (process.env.PORT || 8000));
 app.use(express.static(__dirname + '/'));
 
 console.log('starting app at localhost:8000...');
